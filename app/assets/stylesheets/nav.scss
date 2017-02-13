@@ -1,0 +1,63 @@
+$vhf-red: #B20000;
+$white: #fff;
+
+#mega-menu-container {
+  background: #000;
+}
+
+.menu {
+  position: relative;
+  border: none;
+  text-align: right;
+  border-bottom: 1px solid $vhf-red;
+  //transition: 1s ease-in-out;
+}
+
+.menu > li {
+  display: inline-block;
+}
+
+.menu > li > a {
+  color: #fff;
+}
+
+.menu a {
+  color: #fff;
+}
+
+
+.menu > li:hover {
+  background-color: $vhf-red;
+}
+
+.is-dropdown-submenu-parent.mega-menu {
+  position: static;
+}
+
+.mega-menu .is-dropdown-submenu h3 {
+  color: $white;
+  font-size: 1.2em;
+  margin-bottom: 0.1rem;
+}
+
+.mega-menu .is-dropdown-submenu ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.mega-menu .is-dropdown-submenu {
+  left: 0;
+  right: 0;
+  position: absolute;
+  width: 100%; // Make sure this width causes no issues
+  padding: 1em 2em;
+  text-align: left
+}
+
+.mega-menu .is-dropdown-submenu-parent .is-active {
+  background-color: $vhf-red; 
+}
+
+.is-dropdown-submenu-parent.opens-inner > .is-dropdown-submenu {
+  background-color: $vhf-red;
+}

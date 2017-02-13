@@ -1,0 +1,11 @@
+$vhf-red: #B20000;
+$white: #fff;
+
+.footer.container {
+  background-color: $vhf-red;
+  color: $white;
+}
+
+.footer .contact-info span {
+  display: block;
+}

@@ -20,4 +20,43 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  contact_info:
+    business_name: 'Vision Health and Fitness'
+    email: 'memberships@visionhealthandfitness.co.uk'
+    phone_number: '0191 447 6919'
+    address:
+      line_1: '2 Sands Industrial Estate'
+      line_2: 'Swalwell'
+      city: 'Gateshead'
+      post_code: 'NE16 3DJ'
+
+  home:
+    h1: 'Vision Health and Fitness Gateshead'
+    intro: "Welcome to Vision Health & Fitness Club, we believe in getting the maximum from your work out and gym 
+            experience, that's why we've equipped our gym with state of the art equipment, from Precor CV, to 
+            Technogym weights, a huge free weight section and loads of plate loaded machines for the serious 
+            weight lifters. At Vision Health & fitness, it doesn't matter if your an experienced trainer or a 
+            beginner, with our friendly staff and welcoming gym atmosphere, you will feel comfortable training in 
+            our facility. Classes range from circuit training to boxing training and we have a fully registered 
+            amateur & professional boxing club ran from the gym, who knows you might be training with the next 
+            world champion!"
+
+  classes:
+    ab_solution: 'Ab-solution'
+    bootcamp: 'Bootcamp'
+    boxing: 'Boxing'
+    circuit_training: 'Circuit Training'
+    cycle_fit: 'Cycle Fit'
+    cycle_pump: 'Cycle Pump'
+    hiit: 'HIIT'
+    kettle_x_fit: 'Kettle X Fit'
+    lbt: 'L.B.T'
+    mma: 'MMA'
+    pilates: 'Pilates'
+    pilates_hiit: 'Pilates HIIT'
+    pumped: 'Pumped'
+    rig_assault: 'Rig Assault'
+    s_and_c: 'S&amp;C'
+    total_body: 'Total Body'
+    trx: 'TRX'
+    ultimate_endurance: 'Ultimate Endurance'
