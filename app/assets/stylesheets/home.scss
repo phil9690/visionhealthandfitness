@@ -1,3 +1,7 @@
+$black: #000;
+$white: #fff;
+$vhf-red: #B20000;
+
 .main-banner img {
   width: 100%;
 }
@@ -5,6 +9,42 @@
 .vertical-spacing {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.trial-banner {
+  background-color: $black;
+  color: $white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.trial-banner label {
+  color: $white;
+}
+
+.trial-banner h1 {
+  margin-bottom: 0.5rem;
+}
+
+.trial-banner p {
+  max-width: 60%;
+  margin-bottom: 1rem;
+  margin: 0 auto;
+}
+
+.trial-banner .button {
+  color: $white;
+  border: 2px solid $white;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: none;
+}
+
+.trial-banner .button:hover {
+  border: 2px solid $vhf-red;
+  color: $vhf-red;
+  transition: none;
 }
 
 .home .main-text {

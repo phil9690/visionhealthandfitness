@@ -15,7 +15,7 @@
   .row
     .small-12.large-3.columns
       .card
-        = link_to '#' do
+        = link_to classes_path do
           .card__overlay
           .card__image
             = image_tag('classes.jpg')
@@ -69,12 +69,12 @@
               .card__body
                 %p Our excellent personal trainers are here to help you get in shape
 
-
-
-  .row
-    .small-12.large-6.columns
-      %h2 How to find us
-      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius sapien id aliquam mattis. Suspendisse in sapien eu turpis posuere lobortis. Quisque auctor justo ac finibus interdum.
-    .small-12.large-6.columns
-      %h2 Claim a free trial with us
-      %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius sapien id aliquam mattis. Suspendisse in sapien eu turpis posuere lobortis. Quisque auctor justo ac finibus interdum.
+  .row.expanded.vertical-spacing
+    .trial-banner
+      .row
+        .small-12.columns
+          .underline
+            .underline__content
+              %h2 Claim a free trial with us
+          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius sapien id aliquam mattis. Suspendisse in sapien eu turpis posuere lobortis. Quisque auctor justo ac finibus interdum.
+          %a.button.hollow.large Claim My Trial

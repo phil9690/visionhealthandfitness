@@ -1,7 +1,7 @@
 .row.expanded
   %ul#mega-menu-container.menu{"data-click-open" => "true", "data-disable-hover" => "true", "data-dropdown-menu" => ""}
     %li
-      %a{:href => "#"} Home
+      = link_to 'Home', root_path
     %li.mega-menu
       %a{:href => "#" } Classes
       %ul.menu
@@ -10,11 +10,11 @@
             %h3 Strength
             %ul
               %li
-                %a{:href => "#"} Class Name
+                = link_to 'Ab-Solution', classes_ab_solution_path
               %li
-                %a{:href => "#"} Class Name
+                = link_to 'Kettle-x-Fit', classes_kettle_x_fit_path
               %li
-                %a{:href => "#"} Class Name
+                = link_to 'Pilates', classes_pilates_path
               %li
                 %a{:href => "#"} Class Name
               %li
@@ -25,31 +25,27 @@
             %h3 Cardio
             %ul
               %li
-                %a{:href => "#"} Class Name
+                = link_to 'Cycle Fit', classes_cycle_fit_path
               %li
-                %a{:href => "#"} Class Name
+                = link_to 'HIIT', classes_hiit_path
+          .medium-3.column
+            %h3 Strength &amp; Cardio
+            %ul
               %li
-                %a{:href => "#"} Class Name
+                = link_to 'Bootcamp', classes_bootcamp_path
               %li
-                %a{:href => "#"} Class Name
+                = link_to 'Circuit Training', classes_circuit_training_path
+              %li
+                = link_to 'Cycle Pump', classes_cycle_pump_path
+              %li
+                = link_to 'Pilates HIIT', classes_pilates_hiit_path
           .medium-3.column
             %h3 Sports
             %ul
               %li
-                %a{:href => "#"} Class Name
+                = link_to 'Boxing', classes_boxing_path
               %li
-                %a{:href => "#"} Class Name
-              %li
-                %a{:href => "#"} Class Name
-              %li
-                %a{:href => "#"} Class Name
-          .medium-3.column
-            %h3 Popular
-            %ul
-              %li
-                %a{:href => "#"} Class Name
-              %li
-                %a{:href => "#"} Class Name
+                = link_to 'MMA', classes_mma_path
               %li
                 %a{:href => "#"} Class Name
               %li
