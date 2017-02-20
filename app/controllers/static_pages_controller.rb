@@ -56,7 +56,7 @@ class StaticPagesController < ApplicationController
   def rig_assault
   end
 
-  def s_and_c
+  def strength_and_conditioning
   end
 
   def total_body

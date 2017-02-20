@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/classes/pilates-hiit',        to: 'static_pages#pilates_hiit'
   get '/classes/pumped',              to: 'static_pages#pumped'
   get '/classes/rig-assault',         to: 'static_pages#rig_assault'
-  get '/classes/s-and-c',             to: 'static_pages#s_and_s'
+  get '/classes/strength-and-conditioning',             to: 'static_pages#strength_and_conditioning'
   get '/classes/total-body',          to: 'static_pages#total_body'
   get '/classes/trx',                 to: 'static_pages#trx'
   get '/classes/ultimate-endurance',  to: 'static_pages#ultimate_endurance'
