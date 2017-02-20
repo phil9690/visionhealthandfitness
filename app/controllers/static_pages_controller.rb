@@ -11,6 +11,9 @@ class StaticPagesController < ApplicationController
   def memberships
   end
 
+  def timetables
+  end
+
   def ab_solution
   end
 

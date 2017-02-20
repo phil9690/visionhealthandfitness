@@ -1,0 +1,63 @@
+$black: #000;
+$white: #fff;
+$dark-grey: #212121;
+$vhf-red: #B20000;
+
+.class-timetable {
+  margin-bottom: 1rem;
+}
+
+.class-timetable th, .class-timetable td {
+  text-align: center;
+}
+
+.class-timetable .class-location, .class-timetable .class-name {
+  width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.class-timetable .class-name {
+  font-size: 1.4rem;
+  background: $black;
+  color: $white;
+}
+
+.class-timetable .class-location {
+  font-size: 1.2rem;
+  background: $dark-grey;
+  color: $white;
+}
+
+.timetable-list .row {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.timetable-list table {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.timetable-list table th {
+  text-align: center;
+}
+
+.timetable-list .title {
+  background-color: $vhf-red;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  color: $white;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.timetable-list thead {
+  border-top: none;
+}
+
+.timetable-list th {
+  color: $white;
+  background-color: $dark-grey;
+}
