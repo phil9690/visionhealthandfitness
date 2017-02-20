@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   get '/classes/ultimate-endurance',  to: 'static_pages#ultimate_endurance'
 
   get '/facilities',                  to: 'static_pages#facilities'
+  get '/memberships',                 to: 'static_pages#memberships'
+  get '/contact',                     to: 'static_pages#contact'
 
   #get '/classes/:class', to: 'classes#show'
 end

@@ -2,7 +2,13 @@ class StaticPagesController < ApplicationController
   def home
   end
 
+  def contact
+  end
+
   def classes
+  end
+
+  def memberships
   end
 
   def ab_solution
