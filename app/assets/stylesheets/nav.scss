@@ -10,15 +10,35 @@ $white: #fff;
   border: none;
   text-align: right;
   border-bottom: 1px solid $vhf-red;
-  //transition: 1s ease-in-out;
+  min-height: 55px;
+}
+
+.menu-logo {
+  float: left;
+}
+
+.menu-logo img {
+  height: 55px;
 }
 
 .menu > li {
   display: inline-block;
+  height: 55px;
+}
+
+.menu > li:first-child {
+  margin-left: 1rem;
+}
+
+.menu > li:last-child {
+  margin-right: 1rem;
 }
 
 .menu > li > a {
   color: #fff;
+  height: 55px;
+  line-height: 55px;
+  padding: 0 0.75rem;
 }
 
 .menu a {
