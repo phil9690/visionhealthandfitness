@@ -18,11 +18,9 @@
               %li
                 = link_to 'Pilates', classes_pilates_path
               %li
-                %a{:href => "#"} Class Name
+                = link_to 'Strength & Conditioning', classes_strength_and_conditioning_path
               %li
-                %a{:href => "#"} Class Name
-              %li
-                %a{:href => "#"} Class Name
+                = link_to 'T.R.X', classes_trx_path
           .medium-3.column
             %h3 Cardio
             %ul
@@ -40,7 +38,17 @@
               %li
                 = link_to 'Cycle Pump', classes_cycle_pump_path
               %li
+                = link_to 'L.B.T', classes_cycle_pump_path
+              %li
                 = link_to 'Pilates HIIT', classes_pilates_hiit_path
+              %li
+                = link_to 'Pumped', classes_pumped_path
+              %li
+                = link_to 'Rig Assault', classes_rig_assault_path
+              %li
+                = link_to 'Total Body', classes_total_body_path
+              %li
+                = link_to 'Ultimate Endurance', classes_ultimate_endurance_path
           .medium-3.column
             %h3 Sports
             %ul
@@ -48,10 +56,6 @@
                 = link_to 'Boxing', classes_boxing_path
               %li
                 = link_to 'MMA', classes_mma_path
-              %li
-                %a{:href => "#"} Class Name
-              %li
-                %a{:href => "#"} Class Name
     %li
       = link_to 'Facilities', facilities_path
     %li
