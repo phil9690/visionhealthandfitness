@@ -25,7 +25,19 @@
       .small-12.medium-3.columns
         .social-links
           %h5 Social Links
+          %ul
+            %li= link_to 'Facebook', 'https://www.facebook.com/VisionHealthFitnessClub'
+            %li= link_to 'Twitter', 'https://twitter.com/vision_gym'
+            %li= link_to 'Google+', '#'
 
       .small-12.medium-3.columns
         .opening-hours
           %h5 Opening Hours
+          %ul
+            %li= t('opening_hours.monday')
+            %li= t('opening_hours.tuesday')
+            %li= t('opening_hours.wednesday')
+            %li= t('opening_hours.thursday')
+            %li= t('opening_hours.friday')
+            %li= t('opening_hours.saturday')
+            %li= t('opening_hours.sunday')

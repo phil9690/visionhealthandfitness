@@ -1,8 +1,9 @@
 $vhf-red: #B20000;
 $white: #fff;
+$medium-gray: #333;
 
 .footer.container {
-  background-color: $vhf-red;
+  background-color: $medium-gray;
   color: $white;
   padding: 1rem;
 }
