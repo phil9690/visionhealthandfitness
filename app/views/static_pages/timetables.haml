@@ -3,143 +3,147 @@
     %h1 Class Timetables
 
 .timetable-list
-  .row
-    .small-12.medium-6.columns
-      %table
-        .title monday
-        %thead
-          %tr
-            %th Time
-            %th Class
-            %th Duration
-            %th Location
-        %tbody
-          %tr
-            %td 06:15 - 07:00
-            %td Cycle Fit
-            %td 45 minutes
-            %td Cycle Studio
-          %tr
-            %td 06:15 - 06:45
-            %td Kettle X Fit
-            %td 30 minutes
-            %td Studio 1
-          %tr
-            %td 09:30 - 10:00
-            %td HIIT
-            %td 30 minutes
-            %td Studio 1
-          %tr
-            %td 10:00 - 11:00
-            %td Cycle / Pump
-            %td 1 hour
-            %td Cycle / Studio 1
-          %tr
-            %td 17:30 - 18:00
-            %td HIIT
-            %td 30 minutes
-            %td Studio 1
-          %tr
-            %td 18:00 - 18:45
-            %td Cycle Fit
-            %td 45 minutes
-            %td Cycle Studio
-          %tr
-            %td 18:00 - 19:00
-            %td Pumped
-            %td 1 hour
-            %td Studio 1
-          %tr
-            %td 18:15 - 19:15
-            %td Boxing
-            %td 1 hour
-            %td Boxing Studio
-          %tr
-            %td 19:00 - 20:00
-            %td Amateur Boxing
-            %td 1 hour
-            %td Boxing Studio
-          %tr
-            %td 19:00 - 20:00
-            %td Pilates
-            %td 1 hour
-            %td Studio 1
-          %tr
-            %td 19:15 - 20:00
-            %td TRX Circuit
-            %td 45 minutes
-            %td Hammer Gym
-          %tr
-            %td 19:30 - 20:30
-            %td Weight Circuit
-            %td 1 hour
-            %td Main Gym
+  %ul.accordion{"data-accordion" => ""}
+    %li.accordion-item{"data-accordion-item" => ""}
+      %a.accordion-title{:href => "#"} Monday
+      .accordion-content{"data-tab-content" => ""}
+        %table
+          .title monday
+          %thead
+            %tr
+              %th Time
+              %th Class
+              %th Duration
+              %th Location
+          %tbody
+            %tr
+              %td 06:15 - 07:00
+              %td Cycle Fit
+              %td 45 minutes
+              %td Cycle Studio
+            %tr
+              %td 06:15 - 06:45
+              %td Kettle X Fit
+              %td 30 minutes
+              %td Studio 1
+            %tr
+              %td 09:30 - 10:00
+              %td HIIT
+              %td 30 minutes
+              %td Studio 1
+            %tr
+              %td 10:00 - 11:00
+              %td Cycle / Pump
+              %td 1 hour
+              %td Cycle / Studio 1
+            %tr
+              %td 17:30 - 18:00
+              %td HIIT
+              %td 30 minutes
+              %td Studio 1
+            %tr
+              %td 18:00 - 18:45
+              %td Cycle Fit
+              %td 45 minutes
+              %td Cycle Studio
+            %tr
+              %td 18:00 - 19:00
+              %td Pumped
+              %td 1 hour
+              %td Studio 1
+            %tr
+              %td 18:15 - 19:15
+              %td Boxing
+              %td 1 hour
+              %td Boxing Studio
+            %tr
+              %td 19:00 - 20:00
+              %td Amateur Boxing
+              %td 1 hour
+              %td Boxing Studio
+            %tr
+              %td 19:00 - 20:00
+              %td Pilates
+              %td 1 hour
+              %td Studio 1
+            %tr
+              %td 19:15 - 20:00
+              %td TRX Circuit
+              %td 45 minutes
+              %td Hammer Gym
+            %tr
+              %td 19:30 - 20:30
+              %td Weight Circuit
+              %td 1 hour
+              %td Main Gym
 
-    .small-12.medium-6.columns
-      %table
-        .title tuesday
-        %thead
-          %tr
-            %th Time
-            %th Class
-            %th Duration
-            %th Location
-        %tbody
-          %tr
-            %td 06:15 - 07:00
-            %td Bootcamp
-            %td 45 minutes
-            %td Studio 1
-          %tr
-            %td 07:30 - 08:00
-            %td Rig
-            %td 30 minutes
-            %td Rig
-          %tr
-            %td 09:30 - 10:15
-            %td Cycle Fit
-            %td 45 minutes
-            %td Cycle Studio
-          %tr
-            %td 10:15 - 11:15
-            %td Pilates
-            %td 1 hour
-            %td Studio 1
-          %tr
-            %td 17:30 - 18:00
-            %td Total Body
-            %td 30 minutes
-            %td Studio 1
-          %tr
-            %td 18:00 - 18:45
-            %td L.B.T
-            %td 45 minutes
-            %td Studio 1
-          %tr
-            %td 18:00 - 19:00
-            %td Strength &amp; Conditioning
-            %td 1 hour
-            %td Main Gym
-          %tr
-            %td 19:00 - 19:30
-            %td TRX
-            %td 30 minutes
-            %td Hammer Gym
-          %tr
-            %td 18:30 - 19:15
-            %td Cycle Fit
-            %td 45 minutes
-            %td Cycle Studio
-          %tr
-            %td 19:15 - 20:15
-            %td MMA
-            %td 1 hour
-            %td Boxing Studio
-          %tr
-            %td 19:30 - 20:30
-            %td Weight Circuit
-            %td 1 hour
-            %td Main Gym
+    %li.accordion-item{"data-accordion-item" => ""}
+      %a.accordion-title{:href => "#"} Tuesday
+      .accordion-content{"data-tab-content" => ""}
+        %table
+          .title tuesday
+          %thead
+            %tr
+              %th Time
+              %th Class
+              %th Duration
+              %th Location
+          %tbody
+            %tr
+              %td 06:15 - 07:00
+              %td Bootcamp
+              %td 45 minutes
+              %td Studio 1
+            %tr
+              %td 07:30 - 08:00
+              %td Rig
+              %td 30 minutes
+              %td Rig
+            %tr
+              %td 09:30 - 10:15
+              %td Cycle Fit
+              %td 45 minutes
+              %td Cycle Studio
+            %tr
+              %td 10:15 - 11:15
+              %td Pilates
+              %td 1 hour
+              %td Studio 1
+            %tr
+              %td 17:30 - 18:00
+              %td Total Body
+              %td 30 minutes
+              %td Studio 1
+            %tr
+              %td 18:00 - 18:45
+              %td L.B.T
+              %td 45 minutes
+              %td Studio 1
+            %tr
+              %td 18:00 - 19:00
+              %td Strength &amp; Conditioning
+              %td 1 hour
+              %td Main Gym
+            %tr
+              %td 19:00 - 19:30
+              %td TRX
+              %td 30 minutes
+              %td Hammer Gym
+            %tr
+              %td 18:30 - 19:15
+              %td Cycle Fit
+              %td 45 minutes
+              %td Cycle Studio
+            %tr
+              %td 19:15 - 20:15
+              %td MMA
+              %td 1 hour
+              %td Boxing Studio
+            %tr
+              %td 19:30 - 20:30
+              %td Weight Circuit
+              %td 1 hour
+              %td Main Gym
 
   .row
     .small-12.medium-6.columns

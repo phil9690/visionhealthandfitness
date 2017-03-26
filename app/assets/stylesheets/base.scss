@@ -1,6 +1,8 @@
 // Colours
 
 $vhf-red: #B20000;
+$white: #fff;
+$black: #000;
 
 // Text
 
@@ -9,7 +11,7 @@ $vhf-red: #B20000;
 }
 
 
-.underline h1 + span::after, .underline h2 + span::after{
+.underline h1 + span::after, .underline h2 + span::after {
   position: absolute; 
   left: 0; 
   bottom: 0; 

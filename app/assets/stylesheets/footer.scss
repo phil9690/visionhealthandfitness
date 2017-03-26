@@ -1,13 +1,18 @@
-$vhf-red: #B20000;
-$white: #fff;
-$medium-gray: #333;
-
 .footer.container {
-  background-color: $medium-gray;
+  background-color: $black;
   color: $white;
   padding: 1rem;
 }
 
+.footer {
+  font-size: 0.9rem;
+}
+
 .footer .contact-info span {
   display: block;
+}
+
+.footer .site-links > ul, .footer .social-links > ul, .footer .opening-hours > ul {
+  list-style-type: none;
+  margin: 0;
 }

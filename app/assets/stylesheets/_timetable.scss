@@ -61,3 +61,14 @@ $vhf-red: #B20000;
   color: $white;
   background-color: $dark-grey;
 }
+
+@media screen and (max-width: 640px) {
+  .timetable list table {
+    overflow-x: scroll;
+    width: 100vw;
+  }
+
+  .timetable-list .title {
+    width: 100vw;
+  }
+}

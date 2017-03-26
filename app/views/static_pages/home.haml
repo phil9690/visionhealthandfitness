@@ -12,7 +12,12 @@
             %h1= t('home.h1')
         %p= t('home.intro')
 
+
   .row
+    .small-12.medium-8.medium-centered.columns
+      %iframe{:allowfullscreen => "", :frameborder => "0", :height => "400px", :src => "https://www.youtube.com/embed/ezG-d-yqUVE", :width => "100%"}
+
+  .row.vertical-spacing
     .small-12.large-3.columns
       .card
         = link_to classes_path do
@@ -69,12 +74,12 @@
               .card__body
                 %p Our excellent personal trainers are here to help you get in shape
 
-  .row.expanded.vertical-spacing
-    .trial-banner
-      .row
-        .small-12.columns
-          .underline
-            .underline__content
-              %h2 Claim a free trial with us
-          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius sapien id aliquam mattis. Suspendisse in sapien eu turpis posuere lobortis. Quisque auctor justo ac finibus interdum.
-          %a.button.hollow.large Claim My Trial
+//  .row.expanded.vertical-spacing
+//    .trial-banner
+//      .row
+//        .small-12.columns
+//          .underline
+//            .underline__content
+//              %h2 Claim a free trial with us
+//          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius sapien id aliquam mattis. Suspendisse in sapien eu turpis posuere lobortis. Quisque auctor justo ac finibus interdum.
+//          %a.button.hollow.large Claim My Trial

@@ -1,16 +1,20 @@
 $vhf-red: #B20000;
 $white: #fff;
 
-#mega-menu-container {
-  background: #000;
-}
+// #mega-menu-container {
+//   background: #000;
+// }
+// 
+// .menu {
+//   position: relative;
+//   border: none;
+//   text-align: right;
+//   border-bottom: 1px solid $vhf-red;
+//   min-height: 55px;
+// }
 
-.menu {
-  position: relative;
-  border: none;
-  text-align: right;
-  border-bottom: 1px solid $vhf-red;
-  min-height: 55px;
+.mobile-menu-toggle {
+  float: right;
 }
 
 .menu-logo {
@@ -21,36 +25,74 @@ $white: #fff;
   height: 55px;
 }
 
-.menu > li {
-  display: inline-block;
-  height: 55px;
+// .menu > li {
+//   display: inline-block;
+//   height: 55px;
+// }
+// 
+// .menu > li:first-child {
+//   margin-left: 1rem;
+// }
+// 
+// .menu > li:last-child {
+//   margin-right: 1rem;
+// }
+// 
+// .menu > li > a {
+//   color: #fff;
+//   height: 55px;
+//   line-height: 55px;
+//   padding: 0 0.75rem;
+// }
+// 
+// .menu a {
+//   color: #fff;
+// }
+// 
+// .menu > li:hover {
+//   background-color: $vhf-red;
+// }
+// 
+// .is-dropdown-submenu-parent.mega-menu {
+//   position: static;
+// }
+// 
+// .mega-menu .is-dropdown-submenu h3 {
+//   color: $white;
+//   font-size: 1.2em;
+//   margin-bottom: 0.1rem;
+// }
+// 
+// .mega-menu .is-dropdown-submenu ul {
+//   list-style: none;
+//   margin-left: 0;
+// }
+// 
+// .mega-menu .is-dropdown-submenu {
+//   left: 0;
+//   right: 0;
+//   position: absolute;
+//   width: 100%; // Make sure this width causes no issues
+//   padding: 1em 2em;
+//   text-align: left
+// }
+// 
+// .mega-menu .is-dropdown-submenu-parent .is-active {
+//   background-color: $vhf-red; 
+// }
+// 
+// .is-dropdown-submenu-parent.opens-inner > .is-dropdown-submenu {
+//   background-color: $vhf-red;
+// }
+
+.menu {
+  border-bottom: 1px solid #B20000;
+  min-height: 55px;
 }
 
-.menu > li:first-child {
-  margin-left: 1rem;
-}
-
-.menu > li:last-child {
-  margin-right: 1rem;
-}
-
-.menu > li > a {
-  color: #fff;
-  height: 55px;
-  line-height: 55px;
-  padding: 0 0.75rem;
-}
-
-.menu a {
-  color: #fff;
-}
-
-.menu > li:hover {
-  background-color: $vhf-red;
-}
-
-.is-dropdown-submenu-parent.mega-menu {
-  position: static;
+.mega-menu-container {
+  position: relative;
+  background-color: #000;
 }
 
 .mega-menu .is-dropdown-submenu h3 {
@@ -64,19 +106,67 @@ $white: #fff;
   margin-left: 0;
 }
 
-.mega-menu .is-dropdown-submenu {
-  left: 0;
-  right: 0;
+.menu a {
+  color: #fff;
+}
+
+.menu > li {
+  display: inline-block;
+  height: 55px;
+}
+
+li.is-dropdown-submenu-parent > a::after {
+  border-color: #fff;
+}
+
+.mega-menu {
+  position: static;
+}
+
+.mega-menu ul {
+  background: #000;
+}
+
+.is-dropdown-submenu {
   position: absolute;
-  width: 100%; // Make sure this width causes no issues
+  width: 100%;
+  border: none;
+  background-color: #666;
+  border-top: 1px solid #B20000;
   padding: 1em 2em;
-  text-align: left
 }
 
-.mega-menu .is-dropdown-submenu-parent .is-active {
-  background-color: $vhf-red; 
+.is-dropdown-submenu a {
+  color: #fff;
 }
 
-.is-dropdown-submenu-parent.opens-inner > .is-dropdown-submenu {
-  background-color: $vhf-red;
+@media screen and (max-width: 640px) {
+  .menu {
+    height: 100%;
+  }
+
+  .mega-menu .is-submenu-item h3 {
+    color: #fff;
+    margin-bottom: 0.2rem;
+    text-align: center;
+  }
+
+  .mega-menu .is-submenu-item ul {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  .menu .js-drilldown-back {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  .is-drilldown {
+    height: 100% !important;
+  }
+
+  .menu-logo {
+    display: none !important;
+  }
 }

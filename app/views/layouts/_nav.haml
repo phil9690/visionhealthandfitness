@@ -1,68 +1,71 @@
-.row.expanded
-  %ul#mega-menu-container.menu{"data-click-open" => "true", "data-disable-hover" => "true", "data-dropdown-menu" => ""}
-    %li.menu-logo
-      = image_tag('logo-small.png')
-    %li
-      = link_to 'Home', root_path
-    %li.mega-menu
-      %a{:href => "#" } Classes
-      %ul.menu
-        %li
-          .medium-3.column
-            %h3 Strength
-            %ul
-              %li
-                = link_to 'Ab-Solution', classes_ab_solution_path
-              %li
-                = link_to 'Kettle-x-Fit', classes_kettle_x_fit_path
-              %li
-                = link_to 'Pilates', classes_pilates_path
-              %li
-                = link_to 'Strength & Conditioning', classes_strength_and_conditioning_path
-              %li
-                = link_to 'T.R.X', classes_trx_path
-          .medium-3.column
-            %h3 Cardio
-            %ul
-              %li
-                = link_to 'Cycle Fit', classes_cycle_fit_path
-              %li
-                = link_to 'HIIT', classes_hiit_path
-          .medium-3.column
-            %h3 Strength &amp; Cardio
-            %ul
-              %li
-                = link_to 'Bootcamp', classes_bootcamp_path
-              %li
-                = link_to 'Circuit Training', classes_circuit_training_path
-              %li
-                = link_to 'Cycle Pump', classes_cycle_pump_path
-              %li
-                = link_to 'L.B.T', classes_cycle_pump_path
-              %li
-                = link_to 'Pilates HIIT', classes_pilates_hiit_path
-              %li
-                = link_to 'Pumped', classes_pumped_path
-              %li
-                = link_to 'Rig Assault', classes_rig_assault_path
-              %li
-                = link_to 'Total Body', classes_total_body_path
-              %li
-                = link_to 'Ultimate Endurance', classes_ultimate_endurance_path
-          .medium-3.column
-            %h3 Sports
-            %ul
-              %li
-                = link_to 'Boxing', classes_boxing_path
-              %li
-                = link_to 'MMA', classes_mma_path
-    %li
-      = link_to 'Facilities', facilities_path
-    %li
-      = link_to 'Memberships', memberships_path
-    %li
-      = link_to 'Timetables', timetables_path
-    %li
-      %a{:href => "#"} Contact
+%div{"data-sticky-container" => ""}
+  .title-bar{"data-hide-for" => "medium", "data-responsive-toggle" => "mega-menu-container", "data-btm-anchor" => "content:bottom", "data-options" => "marginTop:0;", "data-sticky" => "", "data-top-anchor" => "1"}
+    .mobile-menu-toggle
+      %button.menu-icon{"data-toggle" => "mega-menu-container", :type => "button"}
+      .title-bar-title Menu
 
-
+%ul#mega-menu-container.vertical.medium-horizontal.menu.right-aligned.mega-menu-container{"data-hover" => "true", "data-responsive-menu" => "drilldown medium-dropdown"}
+  .menu-logo
+    = image_tag('logo-small.png')
+  %li
+    = link_to 'Home', root_path
+  %li.mega-menu
+    %a{:href => "#"} Classes
+    %ul.menu
+      %li
+        .medium-3.small-12.columns
+          %h3 Strength
+          %ul
+            %li
+              = link_to 'Ab-Solution', classes_ab_solution_path
+            %li
+              = link_to 'Kettle-x-Fit', classes_kettle_x_fit_path
+            %li
+              = link_to 'Pilates', classes_pilates_path
+            %li
+              = link_to 'Strength & Conditioning', classes_strength_and_conditioning_path
+            %li
+              = link_to 'T.R.X', classes_trx_path
+        .medium-3.small-12.columns
+          %h3 Cardio
+          %ul
+            %li
+              = link_to 'Cycle Fit', classes_cycle_fit_path
+            %li
+              = link_to 'HIIT', classes_hiit_path
+        .medium-3.small-12.columns
+          %h3 Strength &amp; Cardio
+          %ul
+            %li
+              = link_to 'Bootcamp', classes_bootcamp_path
+            %li
+              = link_to 'Circuit Training', classes_circuit_training_path
+            %li
+              = link_to 'Cycle Pump', classes_cycle_pump_path
+            %li
+              = link_to 'L.B.T', classes_cycle_pump_path
+            %li
+              = link_to 'Pilates HIIT', classes_pilates_hiit_path
+            %li
+              = link_to 'Pumped', classes_pumped_path
+            %li
+              = link_to 'Rig Assault', classes_rig_assault_path
+            %li
+              = link_to 'Total Body', classes_total_body_path
+            %li
+              = link_to 'Ultimate Endurance', classes_ultimate_endurance_path
+        .medium-3.small-12.columns
+          %h3 Sports
+          %ul
+            %li
+              = link_to 'Boxing', classes_boxing_path
+            %li
+              = link_to 'MMA', classes_mma_path
+  %li
+    = link_to 'Facilities', facilities_path
+  %li
+    = link_to 'Memberships', memberships_path
+  %li
+    = link_to 'Timetables', timetables_path
+  %li
+    %a{:href => "#"} Contact
