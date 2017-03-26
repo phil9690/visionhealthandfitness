@@ -12,6 +12,10 @@
             %h1= t('home.h1')
         %p= t('home.intro')
 
+  .row.expanded.home-video-container
+    .small-12.medium-8.medium-centered.columns.home-video
+      %iframe{:allowfullscreen => "", :frameborder => "0", :src => "https://www.youtube.com/embed/ezG-d-yqUVE", :width => "560"}
+
   .row
     .small-12.large-3.columns
       .card

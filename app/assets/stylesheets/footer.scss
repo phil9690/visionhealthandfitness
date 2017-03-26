@@ -3,11 +3,16 @@ $white: #fff;
 $medium-gray: #333;
 
 .footer.container {
-  background-color: $medium-gray;
+  background-color: #000;
   color: $white;
   padding: 1rem;
 }
 
 .footer .contact-info span {
   display: block;
+}
+
+.footer ul {
+  list-style-type: none;
+  margin: 0;
 }
