@@ -1,9 +1,10 @@
 class MessageMailer < ApplicationMailer
 
+  default to: 'enquiry@visionhealthandfitness.co.uk'
+
   def contact(message)
     @body = message.body
-
-    mail to: "memberships@visionhealthandfitness.co.uk", from: message.email
+    mail(from: message.email, reply_to: message.email, subject: "Web enquiry from #{message.name}")
   end
 
 end

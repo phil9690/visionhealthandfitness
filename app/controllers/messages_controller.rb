@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
 
     if @message.valid?
       MessageMailer.contact(@message).deliver_now
-      redirect_to messages_new_url, notice: "Message received"
+      redirect_to new_message_path, notice: "Message received"
     else
       render :new
     end
