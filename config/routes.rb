@@ -24,7 +24,10 @@ Rails.application.routes.draw do
   get '/facilities',                  to: 'static_pages#facilities'
   get '/timetables',                  to: 'static_pages#timetables'
   get '/memberships',                 to: 'static_pages#memberships'
-  get '/contact',                     to: 'static_pages#contact'
+  get '/contact',                     to: 'messages#new', as: 'new_message'
+  post '/contact',                    to: 'messages#create', as: 'create_message'
+
+
 
   #get '/classes/:class', to: 'classes#show'
 end
