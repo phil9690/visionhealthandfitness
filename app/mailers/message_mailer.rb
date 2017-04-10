@@ -1,6 +1,6 @@
 class MessageMailer < ApplicationMailer
 
-  default to: 'enquiry@visionhealthandfitness.co.uk'
+  default to: 'memberships@visionhealthandfitness.co.uk'
 
   def contact(message)
     @body = message.body
