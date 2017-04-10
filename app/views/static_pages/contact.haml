@@ -1,0 +1,28 @@
+//%form
+//  .row
+//    .small-12.columns
+//      %h2 Get in touch
+//    .medium-6.columns
+//      %label
+//        First Name
+//        %input{:placeholder => "First Name", :type => "text"}
+//    .medium-6.columns
+//      %label
+//        Last Name
+//        %input{:placeholder => "Last Name", :type => "text"}
+//    .medium-12.columns
+//      %label
+//        Email
+//        %input{:placeholder => "Email", :type => "text"}
+//    .medium-12.columns
+//      %label
+//        Message
+//        %textarea{:placeholder => "Message", :type => "text"}
+//    .small-12.columns
+//      %button.button{:type => "button"} Send
+
+%p
+  Contact us at 
+  = t('contact_info.email')
+  or visit our facebook page at 
+  = link_to 'Facebook', 'https://www.facebook.com/VisionHealthFitnessClub'
