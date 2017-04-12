@@ -1,6 +1,8 @@
-- provide(:title, 'Sign up')
-- provide(:button_text, 'Create my account')
-%h1 Sign up
+- provide(:title, 'Create New User')
+- provide(:button_text, 'Create User')
 .row
-  .col-md-6.col-md-offset-3
+  .small-12.medium-6.small-centered.columns
+    %h1 Create new User
+.row
+  .small-12.medium-6.small-centered.columns
     = render 'form'
