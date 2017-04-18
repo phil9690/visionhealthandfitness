@@ -1,7 +1,7 @@
 .row
-  .small-12.medium-8.small-centered.columns
-    %h1 Contact Us
-    %p If you have any queries feel free to send us a message.
+  .small-12.medium-8.small-centered.columns.vertical-spacing
+    %h1.underline Contact Us
+    %p.text-center If you have any queries feel free to send us a message.
 .row.collapse
   .small-12.medium-8.small-centered.columns
     = form_for @message, url: create_message_url do |f|
@@ -11,4 +11,4 @@
       .small-12.medium-6.columns= f.email_field :email, placeholder: 'email'
       .small-12.columns= f.text_area :body, placeholder: 'body'
       = f.hidden_field :nickname
-      = f.button 'Send', class: 'small-12 columns button'
+      .small-12.columns.button= f.button 'Send'

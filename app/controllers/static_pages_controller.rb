@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+    @trial = Trial.new
   end
 
   def contact

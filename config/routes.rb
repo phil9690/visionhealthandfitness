@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   scope '/backend' do
     resources :users
+    resources :trials
   end
 
   #get  '/signup',  to: 'users#new'

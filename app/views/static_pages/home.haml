@@ -7,9 +7,7 @@
   .row.vertical-spacing
     .small-12.columns
       .main-text
-        .underline
-          .underline__content
-            %h1= t('home.h1')
+        %h1.underline= t('home.h1')
         %p= t('home.intro')
 
   .row.expanded.home-video-container
@@ -73,12 +71,22 @@
               .card__body
                 %p Our excellent personal trainers are here to help you get in shape
 
-//  .row.expanded.vertical-spacing
-//    .trial-banner
-//      .row
-//        .small-12.columns
-//          .underline
-//            .underline__content
-//              %h2 Claim a free trial with us
-//          %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean varius sapien id aliquam mattis. Suspendisse in sapien eu turpis posuere lobortis. Quisque auctor justo ac finibus interdum.
-//          %a.button.hollow.large Claim My Trial
+  .row.expanded.vertical-spacing
+    .trial-banner
+      .row
+        .small-12.columns
+          %h2.underline Claim a free trial with us
+          %p Enter your details to register for your free trial today
+
+          .row
+            .small-12.medium-6.medium-centered.columns
+              = form_for(@trial) do |f|
+                .small-12.columns
+                  = f.text_field :first_name, placeholder: 'first name'
+                .small-12.columns
+                  = f.text_field :last_name, placeholder: 'last name'
+                .small-12.columns
+                  = f.email_field :email, placeholder: 'email'
+                .small-12.columns
+                  = f.text_field :contact_number, placeholder: 'contact number'
+                = f.button 'Claim my free trial', class: "small-12 medium-6 button"
