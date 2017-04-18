@@ -14,7 +14,6 @@ class TrialsController < ApplicationController
 
   def create
     @trial = Trial.new(trial_params)
-    require 'pry'; binding.pry
     set_trial_status 
     if @trial.save
       TrialMailer.trial_message(@trial).deliver_now
@@ -27,14 +26,18 @@ class TrialsController < ApplicationController
 
   def update
     @trial = Trial.find(params[:id])
-    if @trial.save
-      redirect_to trial_path(@trial)
+    if @trial.update_attributes(trial_params)
+      flash[:success] = "Trial updated"
+      redirect_to @trial
     else
       render 'edit'
     end
   end
 
   def destroy
+    Trial.find(params[:id]).destroy
+    flash[:success] = "Trial deleted"
+    redirect_to trials_url
   end
 
   private

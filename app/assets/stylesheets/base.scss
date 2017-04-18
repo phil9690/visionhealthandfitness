@@ -2,6 +2,10 @@
 
 $vhf-red: #B20000;
 $grey-darken-4: #212121;
+$blue: #2196f3;
+$amber: #ffb300;
+$white: #fff;
+$green: #66bb6a;
 
 // Text
 
@@ -73,3 +77,29 @@ h1, h2, h3, h4, h5, h6, p {
 //  padding-bottom: 5px;
 //}
 
+// Buttons
+
+.button.blue {
+  background-color: $blue;
+}
+
+.button.blue > a, .button.amber > a, .button.green > a {
+  color: $white;
+}
+
+.button.amber {
+  background-color: $amber;
+}
+
+.button.green {
+  background-color: $green;
+}
+
+table .button {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+table .button > a {
+  color: $white;
+}
