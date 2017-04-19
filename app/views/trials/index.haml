@@ -7,24 +7,25 @@
     = link_to 'New Trial', new_trial_path, class: 'button green'
 .row
   .small-12.columns
-    %table
-      %thead
-        %tr
-          %th First Name
-          %th Last Name
-          %th Email
-          %th Contact Number
-          %th Status
-          %th Actions
-      %tbody
-        - @trials.each do |trial|
+    .table-scroll
+      %table
+        %thead
           %tr
-            %td= trial.first_name
-            %td= trial.last_name
-            %td= trial.email
-            %td= trial.contact_number
-            %td= trial.status
-            %td
-              .button.blue= link_to 'View', trial_path(trial)
-              .button.amber= link_to 'Edit', edit_trial_path(trial)
-              .button= link_to 'Delete', trial, :method => :delete, :confirm => "Are you sure ?"
+            %th First Name
+            %th Last Name
+            %th Email
+            %th Contact Number
+            %th Status
+            %th Actions
+        %tbody
+          - @trials.each do |trial|
+            %tr
+              %td= trial.first_name
+              %td= trial.last_name
+              %td= trial.email
+              %td= trial.contact_number
+              %td= trial.status
+              %td
+                .button.blue= link_to 'View', trial_path(trial)
+                .button.amber= link_to 'Edit', edit_trial_path(trial)
+                .button= link_to 'Delete', trial, :method => :delete, :confirm => "Are you sure ?"
