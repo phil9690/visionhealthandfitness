@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418154809) do
+ActiveRecord::Schema.define(version: 20170428191031) do
+
+  create_table "membership_options", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "card_token"
+    t.integer  "membership_option_id"
+    t.index ["membership_option_id"], name: "index_memberships_on_membership_option_id"
+  end
 
   create_table "trials", force: :cascade do |t|
     t.string   "first_name"
@@ -29,6 +49,7 @@ ActiveRecord::Schema.define(version: 20170418154809) do
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

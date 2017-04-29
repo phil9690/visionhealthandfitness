@@ -4,6 +4,12 @@ Rails.application.routes.draw do
     resources :trials
   end
 
+  namespace :backend do
+    resources :memberships
+  end
+
+  resources :memberships, only: [:new, :create, :show]
+
   #get  '/signup',  to: 'users#new'
   #post '/signup',  to: 'users#create'
 
@@ -35,11 +41,7 @@ Rails.application.routes.draw do
 
   get '/facilities',                  to: 'static_pages#facilities'
   get '/timetables',                  to: 'static_pages#timetables'
-  get '/memberships',                 to: 'static_pages#memberships'
+  #get '/memberships',                 to: 'static_pages#memberships'
   get '/contact',                     to: 'messages#new', as: 'new_message'
   post '/contact',                    to: 'messages#create', as: 'create_message'
-
-
-
-  #get '/classes/:class', to: 'classes#show'
 end

@@ -1,0 +1,31 @@
+- provide(:title, 'Memberships')
+.row
+  .small-12.columns
+    %h1 Memberships
+.row
+  .small-12.columns
+    = link_to 'New Membership', new_membership_path, class: 'button green'
+.row
+  .small-12.columns
+    .table-scroll
+      %table
+        %thead
+          %tr
+            %th First Name
+            %th Last Name
+            %th Email
+            %th Contact Number
+            %th Membership Type
+            %th Actions
+        %tbody
+          - @memberships.each do |membership|
+            %tr
+              %td= membership.first_name
+              %td= membership.last_name
+              %td= membership.email
+              %td= membership.phone_number
+              %td= membership.membership_option.name
+              %td
+                .button.blue= link_to 'View', membership_path(membership)
+                .button.amber= link_to 'Edit', edit_backend_membership_path(membership)
+                .button= link_to 'Delete', membership, :method => :delete, :confirm => "Are you sure ?"

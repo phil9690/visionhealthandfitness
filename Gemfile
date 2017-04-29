@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'stripe'
+
 gem 'jquery-turbolinks'
 
 # Foundation 6 for styling
@@ -49,6 +51,7 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-nav'
   gem 'byebug', platform: :mri
 end
 
