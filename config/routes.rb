@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # Front end
   resources :memberships, only: [:new, :create, :index]
   get '/memberships/thank-you', to: 'memberships#confirmation'
+  get '/trial-membership/thank-you', to: 'trials#confirmation'
 
   #get  '/signup',  to: 'users#new'
   #post '/signup',  to: 'users#create'

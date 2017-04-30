@@ -13,7 +13,8 @@ class MembershipsController < ApplicationController
 
   # POST /memberships
   def create
-    require 'pry'; binding.pry
+    @membership_options = MembershipOption.all
+    params[:membership_option] = membership_params[:membership_option_id]
     @membership = Membership.new(membership_params)
 
     raise "Please, check membership errors" unless @membership.valid?
@@ -33,7 +34,19 @@ class MembershipsController < ApplicationController
   private
 
   def membership_params
-    params.require(:membership).permit(:first_name, :last_name, :phone_number, :email, :card_token, :membership_option_id)
+    params.require(:membership).permit(:title,
+                                       :first_name,
+                                       :last_name,
+                                       :dob,
+                                       :phone_number,
+                                       :email,
+                                       :address_line_1,
+                                       :address_line_2,
+                                       :city,
+                                       :post_code,
+                                       :card_token,
+                                       :membership_option_id,
+                                       :terms_accepted)
   end
 
 end

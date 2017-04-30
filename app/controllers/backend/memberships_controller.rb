@@ -1,5 +1,6 @@
 module Backend
   class MembershipsController < ApplicationController
+    before_action :logged_in_user
 
     # GET /backend/memberships
     def index

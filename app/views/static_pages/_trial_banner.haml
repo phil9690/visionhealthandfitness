@@ -9,11 +9,11 @@
           .small-12.medium-6.medium-centered.columns
             = form_for(@trial) do |f|
               .small-12.columns
-                = f.text_field :first_name, placeholder: 'first name'
+                = f.text_field :first_name, placeholder: 'first name', required: true
               .small-12.columns
-                = f.text_field :last_name, placeholder: 'last name'
+                = f.text_field :last_name, placeholder: 'last name', required: true
               .small-12.columns
-                = f.email_field :email, placeholder: 'email'
+                = f.email_field :email, placeholder: 'email', required: true
               .small-12.columns
-                = f.text_field :contact_number, placeholder: 'contact number'
+                = f.text_field :contact_number, placeholder: 'contact number', required: true
               = f.button 'Claim my free trial', class: "small-12 medium-6 button"

@@ -1,4 +1,5 @@
 class TrialsController < ApplicationController
+  before_action :logged_in_user
 
   def index
     @trials = Trial.all
@@ -17,6 +18,7 @@ class TrialsController < ApplicationController
     set_trial_status 
     if @trial.save
       TrialMailer.trial_message(@trial).deliver_now
+      redirect_to trial_membership_thank_you_url
     end
   end
 
@@ -38,6 +40,9 @@ class TrialsController < ApplicationController
     Trial.find(params[:id]).destroy
     flash[:success] = "Trial deleted"
     redirect_to trials_url
+  end
+
+  def confirmation
   end
 
   private
