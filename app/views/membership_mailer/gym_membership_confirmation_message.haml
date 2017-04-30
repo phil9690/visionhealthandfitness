@@ -1,0 +1,11 @@
+% A new member has joined
+%p
+  %strong Name: 
+  = "#{@membership.first_name} #{@membership.last_name}"
+%p
+  %strong Email: 
+  = @membership.email
+%p
+  %strong Contact Number: 
+  = @membership.contact_number
+

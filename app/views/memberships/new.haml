@@ -1,4 +1,4 @@
-.row
+.row.vertical-spacing
   .small-12.medium-6.medium-centered.columns
     #flash-messages
     = form_for @membership, html: { class: "basic-grey" } do |f|
@@ -10,9 +10,11 @@
           %ul
             - @membership.errors.full_messages.each do |message|
               %li= message
+      .hide
+        = select_tag "membership_prices", options_from_collection_for_select(@membership_options, "id", "price"), { id: 'membership_prices' }
       .small-12.columns
         = f.label :membership_option_id
-        = f.collection_select :membership_option_id, @membership_options, :id, :name , {:selected => @membership_options.first}
+        = f.collection_select :membership_option_id, @membership_options, :id, :name, {:selected => @membership_options.find(params[:membership_option]).id}
       .small-12.columns
         = f.label :first_name
         = f.text_field :first_name
@@ -25,14 +27,13 @@
       .small-12.columns
         = f.label :phone_number
         = f.text_field :phone_number
-      = javascript_include_tag "https://js.stripe.com/v2/"
       :javascript
         Stripe.setPublishableKey('#{Rails.application.secrets.stripe_publishable_key}');
       .small-12.columns
         = label_tag "Card Number", nil, required: true
         = text_field_tag :card_number, nil, class: "input-block-level", data: {stripe: "number"}
       .small-12.columns
-        = label_tag "Card Verification", nil, required: true
+        = label_tag "Verification Number", nil, required: true
         = text_field_tag :card_verification, nil, class: "input-block-level", data: {stripe: "cvc"}
       .small-6.columns
         = label_tag "Expiry Month", nil, required: true
@@ -40,4 +41,8 @@
       .small-6.columns
         = label_tag "Expiry Year", nil, required: true
         = select_tag :exp_year, options_for_select((Date.today.year..(Date.today.year+10)).to_a), include_blank: false, data: {stripe: "exp-year"}, class: "span1"
-      = f.submit "Pay Now", class: "button"
+      .small-12.columns
+        #membership_price
+          %h3
+      .small-12.columns
+        = f.submit "Pay Now", class: "button small-12"

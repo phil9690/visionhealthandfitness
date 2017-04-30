@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # Root
+  root 'static_pages#home'
+
+  # Back end
   scope '/backend' do
     resources :users
     resources :trials
@@ -8,17 +12,19 @@ Rails.application.routes.draw do
     resources :memberships
   end
 
-  resources :memberships, only: [:new, :create, :show]
+  # Front end
+  resources :memberships, only: [:new, :create, :index]
+  get '/memberships/thank-you', to: 'memberships#confirmation'
 
   #get  '/signup',  to: 'users#new'
   #post '/signup',  to: 'users#create'
-
+ 
+  # Sessions
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
-  root 'static_pages#home'
-
+  # Classes
   get '/classes',                     to: 'static_pages#classes'
   get '/classes/ab-solution',         to: 'static_pages#ab_solution'
   get '/classes/bootcamp',            to: 'static_pages#bootcamp'
@@ -41,7 +47,8 @@ Rails.application.routes.draw do
 
   get '/facilities',                  to: 'static_pages#facilities'
   get '/timetables',                  to: 'static_pages#timetables'
-  #get '/memberships',                 to: 'static_pages#memberships'
+
+  # Contact
   get '/contact',                     to: 'messages#new', as: 'new_message'
   post '/contact',                    to: 'messages#create', as: 'create_message'
 end
