@@ -8,4 +8,9 @@
 %p
   %strong Contact Number: 
   = @membership.phone_number
-
+%p
+  %strong Membership Start Date:
+  = @membership.created_at.strftime('%d/%m/%Y')
+%p
+  %strong Membership End Date:
+  = (@membership.created_at + 364.days).strftime('%d/%m/%Y')
