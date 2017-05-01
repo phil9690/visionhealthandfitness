@@ -63,11 +63,34 @@ $(document).on('turbolinks:load', function() {
   document.getElementById('membership_prices').selectedIndex = optionIndex;
   var price_text = $("#membership_prices option:selected").text();
   $("#membership_price > h3").first().text("Price: £" + price_text);
+  var membershipOptions = document.getElementById('membership_membership_option_id');
+  var selectedText = membershipOptions.options[membershipOptions.selectedIndex].text;
+  var membershipTermsText = $('#membership-terms-text');
+
+  if (selectedText == 'platinum') {
+    membershipTermsText.text(annualPlatinumMembershipTerms);
+  } else {
+    membershipTermsText.text(annualPeakMembershipTerms);
+  }
+
+  var annualPeakMembershipTerms = "You are committing to an annual peak gym membership at the price of £135 in accordance with our May promotion, by clicking 'I agree' you formally waive your right to a cooling off period and agree that this service commences immediately."
+  var annualPlatinumMembershipTerms = "You are committing to a Platinum gym membership at the price of £420, by clicking 'I agree' you formally waive your right to a cooling off period and agree that this service commences immediately."
  
   document.getElementById('membership_membership_option_id').onchange = function() {
     document.getElementById('membership_prices').selectedIndex = this.selectedIndex;
     var price_text = $("#membership_prices option:selected").text();
     $("#membership_price > h3").first().text("Price: £" + price_text);
+
+    var membershipOptions = document.getElementById('membership_membership_option_id');
+    var selectedText = membershipOptions.options[membershipOptions.selectedIndex].text;
+    var membershipTermsText = $('#membership-terms-text');
+
+    if (selectedText == 'platinum') {
+      membershipTermsText.text(annualPlatinumMembershipTerms);
+    } else {
+      membershipTermsText.text(annualPeakMembershipTerms);
+    }
+
     return false
   };
 });

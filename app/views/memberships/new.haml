@@ -17,7 +17,7 @@
         = f.collection_select :membership_option_id, @membership_options, :id, :name, {:selected => @membership_options.find(params[:membership_option]).id}
       .small-12.medium-4.columns
         = f.label :title
-        = f.select :title, ['Mr', 'Mrs', 'Miss', 'Dr']
+        = f.select :title, ['Mr', 'Mrs', 'Ms', 'Miss', 'Dr']
       .small-12.medium-4.columns
         = f.label :first_name
         = f.text_field :first_name, required: true
@@ -68,10 +68,10 @@
             %li To the best of your knowledge and belief you are in good health and not knowingly incapable of engaging in either active or passive exercise and that such exercise would not be detrimental to your health, safety, comfort, well being or physical condition. Further, that you will advise us immediately should your circumstances change.
             %li You have read this agreement, including the terms and conditions before accepting them below.
             %li This agreement will become binding upon both parties once you have ticked the box below and the "Pay Now" button has been clicked.
-            %li You are committing to an annual peak gym membership at the price of £135. By clicking “I agree” you formally waive your right to a cooling off period and agree that this service commences immediately.
+            %li#membership-terms-text You are committing to an annual peak gym membership at the price of £135. By clicking “I agree” you formally waive your right to a cooling off period and agree that this service commences immediately.
             %li You request that we begin the service immediately after you have signed up.
             %fieldset.small-12.columns
-            = f.check_box :terms_accepted
+            = f.check_box :terms_accepted, required: true
             = label_tag :terms_accepted, 'I agree'
       .small-12.columns
         #membership_price

@@ -3,7 +3,7 @@ class Membership < ApplicationRecord
 
   before_save { email.downcase! }
 
-  validates :title, :first_name, :last_name, :dob, :phone_number, :address_line_1, :city, :post_code, :membership_option_id, presence: true
+  validates :title, :first_name, :last_name, :dob, :phone_number, :address_line_1, :city, :post_code, :membership_option_id, :terms_accepted, presence: true
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },

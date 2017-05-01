@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  #layout 'backend/backend'
-
   before_action :logged_in_user
   #before_action :correct_user, only: [:edit, :update]
 
