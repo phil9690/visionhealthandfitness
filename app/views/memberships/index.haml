@@ -54,20 +54,34 @@
                 %a.button{href: 'https://secure.ashbournemanagement.co.uk/amsv2/signup/default.aspx?fn=VSF1X'} join now
 
       .row
+        - @annual_peak = @membership_options.find_by(name: 'annual peak')
+        - @platinum = @membership_options.find_by(name: 'platinum')
         .small-12.columns.yearly-memberships
           %h3.underline Annual Memberships
-          - @membership_options.each do |option|
-            .small-12.medium-6.columns
-              .membership-option
-                .membership-title
-                  %h3= option.name
-                .membership-price
-                  %span= "£#{option.price}"
-                .membership-details
-                  %ul
-                    %li 12 months contract
-                    %li Use of all facilities at all times
-                    %li Includes 200 classes per month
-                .membership-link
-                  = link_to 'Join Now', new_membership_path(membership_option: option.id), class: 'button'
+          .small-12.medium-6.columns
+            .membership-option
+              .membership-title
+                %h3= @annual_peak.name
+              .membership-price
+                %span= "£#{@annual_peak.price}"
+              .membership-details
+                %ul
+                  %li 12 months contract
+                  %li Use of all facilities at all times
+                  %li Includes 200 classes per month
+              .membership-link
+                = link_to 'Join Now', new_membership_path(membership_option: @annual_peak.id), class: 'button'
+          .small-12.medium-6.columns
+            .membership-option
+              .membership-title
+                %h3= @platinum.name
+              .membership-price
+                %span= "£#{@platinum.price}"
+              .membership-details
+                %ul
+                  %li 12 months contract
+                  %li Use of all facilities at all times
+                  %li Over 200 classes per month including Boxing, MMA, Strength and Conditioning
+              .membership-link
+                = link_to 'Join Now', new_membership_path(membership_option: @platinum.id), class: 'button'
 
