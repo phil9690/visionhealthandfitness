@@ -61,14 +61,14 @@
           .small-12.medium-6.columns
             .membership-option
               .membership-title
-                %h3= @annual_peak.name
+                %h3= "#{@annual_peak.name} (May promo only)"
               .membership-price
                 %span= "£#{@annual_peak.price}"
               .membership-details
                 %ul
                   %li 12 months contract
                   %li Use of all facilities at all times
-                  %li Includes 200 classes per month
+                  %li Includes 200 classes per month (excludes Boxing, MMA, Strengh and Conditioning)
               .membership-link
                 = link_to 'Join Now', new_membership_path(membership_option: @annual_peak.id), class: 'button'
           .small-12.medium-6.columns
