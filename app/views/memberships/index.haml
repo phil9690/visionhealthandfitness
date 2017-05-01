@@ -61,7 +61,10 @@
           .small-12.medium-6.columns
             .membership-option
               .membership-title
-                %h3= "#{@annual_peak.name} (May promo only)"
+                %h3
+                  = "#{@annual_peak.name} (May promo only)"
+                  %br
+                  Normally £175
               .membership-price
                 %span= "£#{@annual_peak.price}"
               .membership-details
