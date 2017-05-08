@@ -7,14 +7,22 @@
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
     <%= stylesheet_link_tag    "application" %>
+
+    <%= javascript_include_tag "https://js.stripe.com/v2/" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+
     <%= csrf_meta_tags %>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Open+Sans" rel="stylesheet">
   </head>
 
   <body>
     <%= render 'layouts/nav' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
+    
+    <%= render 'shared/flash_messages' %>    
 
+    <%= yield %>
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>

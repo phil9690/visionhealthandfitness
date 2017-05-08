@@ -16,25 +16,22 @@ $vhf-red: #B20000;
   color: $white;
   text-align: center;
   padding: 1rem;
+  margin-top: 2rem;
 }
 
-.trial-banner label {
-  color: $white;
-}
-
-.trial-banner h1 {
-  margin-bottom: 0.5rem;
+.trial-banner .underline {
+  margin-bottom: 30px;
 }
 
 .trial-banner p {
   max-width: 60%;
-  margin-bottom: 1rem;
   margin: 0 auto;
+  margin-bottom: 2rem;
+  color: $white;
 }
 
 .trial-banner .button {
   color: $white;
-  border: 2px solid $white;
   text-transform: uppercase;
   font-weight: 600;
   margin-top: 1rem;
@@ -42,8 +39,6 @@ $vhf-red: #B20000;
 }
 
 .trial-banner .button:hover {
-  border: 2px solid $vhf-red;
-  color: $vhf-red;
   transition: none;
 }
 

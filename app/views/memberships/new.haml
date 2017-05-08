@@ -1,0 +1,80 @@
+.row.vertical-spacing
+  .small-12.medium-6.medium-centered.columns
+    #flash-messages
+    = form_for @membership do |f|
+      - if @membership.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@membership.errors.count, "error")
+            prohibited this membership from being saved:
+          %ul
+            - @membership.errors.full_messages.each do |message|
+              %li= message
+      .hide
+        = select_tag "membership_prices", options_from_collection_for_select(@membership_options, "id", "price"), { id: 'membership_prices' }
+      .small-12.columns
+        = f.label :membership_option_id
+        = f.collection_select :membership_option_id, @membership_options, :id, :name, {:selected => @membership_options.find(params[:membership_option]).id}
+      .small-12.medium-4.columns
+        = f.label :title
+        = f.select :title, ['Mr', 'Mrs', 'Ms', 'Miss', 'Dr']
+      .small-12.medium-4.columns
+        = f.label :first_name
+        = f.text_field :first_name, required: true
+      .small-12.medium-4.columns
+        = f.label :last_name
+        = f.text_field :last_name, required: true
+      .small-12.medium-5.columns
+        = f.label :dob
+        = f.date_field :dob, required: true
+      .small-12.columns
+        = f.label :email
+        = f.email_field :email, required: true
+      .small-12.columns
+        = f.label :phone_number
+        = f.text_field :phone_number, required: true
+      .small-12.medium-6.columns
+        = f.label :address_line_1
+        = f.text_field :address_line_1, required: true
+      .small-12.medium-6.columns
+        = f.label :address_line_2
+        = f.text_field :address_line_2
+      .small-12.medium-6.columns
+        = f.label :city
+        = f.text_field :city, required: true
+      .small-12.medium-6.columns
+        = f.label :post_code
+        = f.text_field :post_code, required: true
+      :javascript
+        Stripe.setPublishableKey('#{Rails.application.secrets.stripe_publishable_key}');
+      .small-12.columns
+        = label_tag "Card Number", nil, required: true
+        = text_field_tag :card_number, nil, data: {stripe: "number"}
+      .small-12.medium-4.columns
+        = label_tag "Verification Number", nil, required: true
+        = text_field_tag :card_verification, nil, data: {stripe: "cvc"}
+      .small-6.medium-4.columns
+        = label_tag "Expiry Month", nil, required: true
+        = select_tag :exp_month, options_for_select(Date::MONTHNAMES.compact.each_with_index.map { |name,i| ["#{i+1} - #{name}", i+1] }), include_blank: false, data: {stripe: "exp-month"}, class: "span2"
+      .small-6.medium-4.columns
+        = label_tag "Expiry Year", nil, required: true
+        = select_tag :exp_year, options_for_select((Date.today.year..(Date.today.year+10)).to_a), include_blank: false, data: {stripe: "exp-year"}, class: "span1"
+      .small-12.columns
+        .callout.success
+          %h4 Declaration
+          %p You warrant, declare and acknowledge that:
+          %ol
+            %li The information given by you in entering this agreement is correct and will be relied upon by us.
+            %li To the best of your knowledge and belief you are in good health and not knowingly incapable of engaging in either active or passive exercise and that such exercise would not be detrimental to your health, safety, comfort, well being or physical condition. Further, that you will advise us immediately should your circumstances change.
+            %li You have read this agreement, including the terms and conditions before accepting them below.
+            %li This agreement will become binding upon both parties once you have ticked the box below and the "Pay Now" button has been clicked.
+            %li#membership-terms-text You are committing to an annual peak gym membership at the price of £135. By clicking “I agree” you formally waive your right to a cooling off period and agree that this service commences immediately.
+            %li You request that we begin the service immediately after you have signed up.
+            %fieldset.small-12.columns
+            = f.check_box :terms_accepted, required: true
+            = label_tag :terms_accepted, 'I agree'
+      .small-12.columns
+        #membership_price
+          %h3
+      .small-12.columns
+        = f.submit "Pay Now", class: "button small-12"

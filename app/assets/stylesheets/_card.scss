@@ -35,13 +35,17 @@ $white: #fff;
   position: absolute;
   top: 0;
   width: 100%;
-  color: $white;
   padding: 2rem 1.5rem;
+}
+
+.card__text p {
+  color: $white;
 }
 
 .card__title {
   text-align: center;
   text-transform: uppercase;
+  color: $white;
 }
 
 .card__body {

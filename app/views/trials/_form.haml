@@ -1,0 +1,13 @@
+= form_for(@trial) do |f|
+  = f.label :first_name
+  = f.text_field :first_name
+  = f.label :last_name
+  = f.text_field :last_name
+  = f.label :email
+  = f.email_field :email
+  = f.label :contact_number
+  = f.text_field :contact_number
+  = f.label :status
+  = f.select :status, Trial::STATUSES
+  = f.button yield(:button_text), class: "small-12 button"
+

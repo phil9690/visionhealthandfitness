@@ -1,0 +1,32 @@
+%p A new member has joined
+%p
+  %strong Name: 
+  = "#{@membership.title} #{@membership.first_name} #{@membership.last_name}"
+%p
+  %strong Email: 
+  = @membership.email
+%p
+  %strong Contact Number: 
+  = @membership.phone_number
+%p
+  %strong DOB
+  = @membership.dob.strftime('%d/%m/%Y')
+%p
+  %strong Address Line 1
+  = @membership.address_line_1
+%p
+  %strong City
+  = @membership.city
+%p
+  %strong Post Code
+  = @membership.post_code
+%p
+  %strong Membership Option
+  = @membership.membership_option.name
+%p
+  %strong Membership Start Date:
+  = @membership.created_at.strftime('%d/%m/%Y')
+%p
+  %strong Membership End Date:
+  = (@membership.created_at + 364.days).strftime('%d/%m/%Y')
+
