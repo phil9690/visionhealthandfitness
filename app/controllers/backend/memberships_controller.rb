@@ -1,10 +1,14 @@
 module Backend
-  class MembershipsController < ApplicationController
-    before_action :logged_in_user
-
+  class MembershipsController < BaseController
     # GET /backend/memberships
     def index
       @memberships = Membership.all
+    end
+
+    # GET /backend/memberships/new
+    def new
+      @membership_options = MembershipOption.all
+      @membership = Membership.new
     end
 
     # GET /backend/memberships/:id
@@ -17,6 +21,5 @@ module Backend
       flash[:success] = "Membership deleted"
       redirect_to backend_memberships_url
     end
-
   end
 end

@@ -1,0 +1,14 @@
+.row.vertical-spacing
+  .small-12.medium-8.medium-centered.columns
+    %p
+      %b Name: 
+      = "#{@trial.first_name} #{@trial.last_name}"
+    %p
+      %b Email: 
+      = @trial.email
+    %p
+      %b Contact Number: 
+      = @trial.contact_number
+    %p
+      %b Status:
+      = @trial.status

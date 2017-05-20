@@ -1,5 +1,4 @@
 class MembershipsController < ApplicationController
-
   # GET /memberships
   def index
     @membership_options = MembershipOption.all
@@ -48,5 +47,4 @@ class MembershipsController < ApplicationController
                                        :membership_option_id,
                                        :terms_accepted)
   end
-
 end
