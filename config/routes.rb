@@ -2,18 +2,16 @@ Rails.application.routes.draw do
   # Root
   root 'static_pages#home'
 
-  # Back end
-  scope '/backend' do
+  # Backend
+  namespace :backend do
     resources :users
     resources :trials
-  end
-
-  namespace :backend do
     resources :memberships
   end
 
   # Front end
-  resources :memberships, only: [:new, :create, :index]
+  resources :trials,
+            :memberships, only: [:new, :create, :index]
   get '/memberships/thank-you', to: 'memberships#confirmation'
   get '/trial-membership/thank-you', to: 'trials#confirmation'
 

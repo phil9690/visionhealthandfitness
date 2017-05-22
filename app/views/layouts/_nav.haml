@@ -30,12 +30,12 @@
         - if logged_in?
           %li
             %a{:href => "#"}= current_user.name.capitalize
-            %ul.menu
+            %ul.menu.vertical
               %li
-                = link_to 'Users', users_path
+                = link_to 'Users', backend_users_path
               %li
                 = link_to 'Memberships', backend_memberships_path
               %li
-                = link_to 'Trials', trials_path
+                = link_to 'Trials', backend_trials_path
               %li
                 = link_to 'Log out', logout_path, method: :delete
