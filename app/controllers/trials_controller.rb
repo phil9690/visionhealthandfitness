@@ -9,6 +9,9 @@ class TrialsController < ApplicationController
     if @trial.save
       TrialMailer.trial_message(@trial).deliver_now
       redirect_to trial_membership_thank_you_path
+    elsif @trial.errors.any?
+      flash.now[:error] = @trial.errors.full_messages
+      render :new
     end
   end
 

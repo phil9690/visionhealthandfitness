@@ -50,4 +50,9 @@ Rails.application.routes.draw do
   # Contact
   get '/contact',                     to: 'messages#new', as: 'new_message'
   post '/contact',                    to: 'messages#create', as: 'create_message'
+
+  # Letter opener path for development only
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end
