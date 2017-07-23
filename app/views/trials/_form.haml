@@ -7,7 +7,5 @@
   = f.email_field :email
   = f.label :contact_number
   = f.text_field :contact_number
-  = f.label :status
-  = f.select :status, Trial::STATUSES
   = f.button yield(:button_text), class: "small-12 button"
 
