@@ -10,15 +10,33 @@ run.config:
 deploy.config:
   # compile assets on deploy
   extra_steps:
-    - rake assets:precompile
+    - rake assets:precompile RAILS_ENV=production
   # seed or run db migrations on deploy
   before_live:
     web.main:
-      - rake db:setup_or_migrate
+      - rake db:migrate RAILS_ENV=production
 
 # add a database
 data.db:
   image: nanobox/mysql:5.6
+
+  cron:
+    - id: backup
+      schedule: '0 3 * * *'
+      command: |
+        mysqldump --disable-keys --hex-blob -u ${DATA_MYSQL_USER} -p"${DATA_MYSQL_PASS}" --databases gonano |
+        gzip |
+        curl -k -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/backup-${HOSTNAME}-$(date -u +%Y-%m-%d.%H-%M-%S).sql.gz --data-binary @- &&
+        curl -k -s -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/ |
+        json_pp |
+        grep ${HOSTNAME} |
+        sort |
+        head -n-1 |
+        sed 's/.*: "\(.*\)".*/\1/' |
+        while read file
+        do
+          curl -k -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/${file} -X DELETE
+        done
 
 # add a web component and give it a "start" command
 web.main:
