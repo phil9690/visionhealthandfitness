@@ -27,7 +27,7 @@ data.storage:
           tee /dev/fd/4 |
           curl -k -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/backup-${HOSTNAME}-$(date -u +%Y-%m-%d.%H-%M-%S).tgz --data-binary @-
         ) 4>&1 |
-        aws s3 cp - s3://${AWS_S3_BACKUP_BUCKET}/backup-${HOSTNAME}-$(date -u +%Y-%m-%d.%H-%M-%S).tgz &&
+        aws s3 cp - s3://${AWS_S3_BACKUP_BUCKET}/backup-${HOSTNAME}-$(date -u +%Y-%m-%d\ %H:%M:%S).tgz &&
         curl -k -s -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/ |
         json_pp |
         grep ${HOSTNAME} |
@@ -56,7 +56,7 @@ data.mysql:
           tee /dev/fd/4 |
           curl -k -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/backup-${HOSTNAME}-$(date -u +%Y-%m-%d.%H-%M-%S).sql.gz --data-binary @-
         ) 4>&1 |
-        aws s3 cp - s3://${AWS_S3_BACKUP_BUCKET}/backup-${HOSTNAME}-$(date -u +%Y-%m-%d.%H-%M-%S).tgz &&
+        aws s3 cp - s3://${AWS_S3_BACKUP_BUCKET}/backup-${HOSTNAME}-$(date -u +%Y-%m-%d\ %H:%M:%S).tgz &&
         curl -k -s -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/ |
         json_pp |
         grep ${HOSTNAME} |
