@@ -7,10 +7,10 @@ run.config:
 
 deploy.config:
   extra_steps:
-    - rake assets:precompile RAILS_ENV=production
+    - rake assets:precompile
   before_live:
     web.main:
-      - rake db:migrate RAILS_ENV=production
+      - rake db:migrate
 
 data.storage:
   image: nanobox/unfs
@@ -20,14 +20,15 @@ data.storage:
 
   cron:
     - id: backup
-      schedule: '0 3 * * *'
+      schedule: '0 1 * * *'
       command: |
+        date=$(date -u +%Y-%m-%d.%H-%M-%S) &&
         (
           tar cz -C /data/var/db/unfs/ |
           tee /dev/fd/4 |
-          curl -k -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/backup-${HOSTNAME}-$(date -u +%Y-%m-%d.%H-%M-%S).tgz --data-binary @-
+          curl -k -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/backup-${HOSTNAME}-${date}.tgz --data-binary @-
         ) 4>&1 |
-        aws s3 cp - s3://${AWS_S3_BACKUP_BUCKET}/backup-${HOSTNAME}-$(date -u +%Y-%m-%d\ %H:%M:%S).tgz &&
+        aws s3 cp - s3://${AWS_S3_BACKUP_BUCKET}/${APP_NAME}-backup-${HOSTNAME}-${date}.tgz &&
         curl -k -s -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/ |
         json_pp |
         grep ${HOSTNAME} |
@@ -37,7 +38,7 @@ data.storage:
         while read file
         do
           curl -k -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/${file} -X DELETE
-          aws s3 rm s3://${AWS_S3_BACKUP_BUCKET}/${file}
+          aws s3 rm s3://${AWS_S3_BACKUP_BUCKET}/${APP_NAME}-${file}
         done
 
 data.mysql:
@@ -48,15 +49,16 @@ data.mysql:
 
   cron:
     - id: backup
-      schedule: '0 3 * * *'
+      schedule: '0 1 * * *'
       command: |
+        date=$(date -u +%Y-%m-%d.%H-%M-%S) &&
         (
           mysqldump --disable-keys --hex-blob -u ${DATA_MYSQL_USER} -p"${DATA_MYSQL_PASS}" -h ${DATA_MYSQL_HOST} --databases gonano |
           gzip |
           tee /dev/fd/4 |
-          curl -k -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/backup-${HOSTNAME}-$(date -u +%Y-%m-%d.%H-%M-%S).sql.gz --data-binary @-
+          curl -k -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/backup-${HOSTNAME}-${date}.sql.gz --data-binary @-
         ) 4>&1 |
-        aws s3 cp - s3://${AWS_S3_BACKUP_BUCKET}/backup-${HOSTNAME}-$(date -u +%Y-%m-%d\ %H:%M:%S).tgz &&
+        aws s3 cp - s3://${AWS_S3_BACKUP_BUCKET}/${APP_NAME}-backup-${HOSTNAME}-${date}.sql.gz &&
         curl -k -s -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/ |
         json_pp |
         grep ${HOSTNAME} |
@@ -66,13 +68,17 @@ data.mysql:
         while read file
         do
           curl -k -H "X-AUTH-TOKEN: ${WAREHOUSE_DATA_HOARDER_TOKEN}" https://${WAREHOUSE_DATA_HOARDER_HOST}:7410/blobs/${file} -X DELETE
-          aws s3 rm s3://${AWS_S3_BACKUP_BUCKET}/${file}
+          aws s3 rm s3://${AWS_S3_BACKUP_BUCKET}/${APP_NAME}-${file}
         done
 
 web.main:
   start:
     nginx: nginx -c /app/config/nginx.conf
     puma: bundle exec puma -C /app/config/puma.rb
+
+  network_dirs:
+    data.storage:
+      - production
 
   writable_dirs:
     - tmp
