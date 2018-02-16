@@ -2,7 +2,6 @@
   .small-12.columns
     %h1.underline Memberships
 
-
 .row.vertical-spacing
   .small-12.columns
     .memberships
@@ -21,8 +20,7 @@
                   %li Use of all facilities at all times
                   %li Includes 200 classes per month
               .membership-link
-                %a.button{href: 'https://visionhealthandfitness.membr.com/register'} join now
-
+                %a.button{:href => "https://visionhealthandfitness.membr.com/register"} join now
           .small-12.medium-4.columns
             .membership-option
               .membership-title
@@ -35,9 +33,7 @@
                   %li Use of all facilities at all times
                   %li Over 200 classes per month including Boxing, MMA, Strength and Conditioning
               .membership-link
-                %a.button{href: 'https://visionhealthandfitness.membr.com/register'} join now
-
-
+                %a.button{:href => "https://visionhealthandfitness.membr.com/register"} join now
           .small-12.medium-4.columns
             .membership-option
               .membership-title
@@ -51,38 +47,33 @@
                   %li Use of all facilities at all times
                   %li Includes 200 classes per month
               .membership-link
-                %a.button{href: 'https://visionhealthandfitness.membr.com/register'} join now
-
+                %a.button{:href => "https://visionhealthandfitness.membr.com/register"} join now
       .row
-        - @annual_peak = @membership_options.find_by(name: 'annual peak')
-        - @platinum = @membership_options.find_by(name: 'platinum')
         .small-12.columns.yearly-memberships
           %h3.underline Annual Memberships
           .small-12.medium-6.columns
             .membership-option
               .membership-title
                 %h3
-                  = "#{@annual_peak.name} (May promo only)"
-                  %br
-                  Normally £175
+                  annual peak
+                  %br/
               .membership-price
-                %span= "£#{@annual_peak.price}"
+                %span £179
               .membership-details
                 %ul
                   %li Use of all facilities at all times
                   %li Includes 200 classes per month (excludes Boxing, MMA, Strengh and Conditioning)
               .membership-link
-                %a.button{href: 'https://visionhealthandfitness.membr.com/register'} Join Now
+                %a.button{:href => "https://visionhealthandfitness.membr.com/register"} Join Now
           .small-12.medium-6.columns
             .membership-option
               .membership-title
-                %h3= @platinum.name
+                %h3 platinum
               .membership-price
-                %span= "£#{@platinum.price}"
+                %span £420
               .membership-details
                 %ul
                   %li Use of all facilities at all times
                   %li Over 200 classes per month including Boxing, MMA, Strength and Conditioning
               .membership-link
-                %a.button{href: 'https://visionhealthandfitness.membr.com/register'} Join Now
-
+                %a.button{:href => "https://visionhealthandfitness.membr.com/register"} Join Now

@@ -5,8 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'stripe'
-
 gem 'jquery-turbolinks'
 
 # Foundation 6 for styling
@@ -20,7 +18,7 @@ gem 'pry'
 gem 'bcrypt'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.1'
+gem 'rails', '~> 5.1.1'
 # Use sqlite3 as the database for Active Record
 gem 'mysql2'
 # Use Puma as the app server

@@ -3,13 +3,13 @@ default: &default
   encoding: utf8
   pool: 5
   timeout: 5000
-  host: <%= ENV['DATA_MYSQL_HOST'] || 'localhost' %>
-  username: <%= ENV['DATA_MYSQL_USER'] || 'root' %>
-  password: <%= ENV['DATA_MYSQL_PASS'] || 'admin' %>
+  host: <%= ENV['DATA_MYSQL_HOST'] %>
+  username: <%= ENV['DATA_MYSQL_USER'] %>
+  password: <%= ENV['DATA_MYSQL_PASS'] %>
 
 development:
   <<: *default
-  database: development
+  database: gonano
 
 test:
   <<: *default
@@ -17,4 +17,4 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['DATABASE_NAME'] %>
+  database: gonano

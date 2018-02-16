@@ -5,12 +5,17 @@ run.config:
     - nodejs
     - nginx
 
+  build_triggers:
+    - Gemfile
+    - Gemfile.lock
+
 deploy.config:
   extra_steps:
-    - rake assets:precompile
+    - rake assets:precompile RAILS_ENV=production
+
   before_live:
     web.main:
-      - rake db:migrate
+      - rake db:setup_or_migrate
 
 data.storage:
   image: nanobox/unfs
