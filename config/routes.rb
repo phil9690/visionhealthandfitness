@@ -47,6 +47,8 @@ Rails.application.routes.draw do
   get '/facilities',                  to: 'static_pages#facilities'
   get '/timetables',                  to: 'static_pages#timetables'
 
+  get '/vhf_code_of_conduct',         to: 'static_pages#vhf_code_of_conduct'
+
   # Contact
   get '/contact',                     to: 'messages#new', as: 'new_message'
   post '/contact',                    to: 'messages#create', as: 'create_message'

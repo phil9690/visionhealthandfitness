@@ -1,19 +1,11 @@
 .row.expanded
-  .trial-banner
-    .row
-      .small-12.columns
-        %h2.underline Claim a free trial with us
-        %p Enter your details to register for your free trial today
+	.trial-banner
+		.row
+			.small-12.columns
+				%h2.underline Claim a free trial with us
+				%p Enter your details to register for your free trial today
 
-        .row
-          .small-12.medium-6.medium-centered.columns
-            = form_for(@trial) do |f|
-              .small-12.columns
-                = f.text_field :first_name, placeholder: 'first name', required: true
-              .small-12.columns
-                = f.text_field :last_name, placeholder: 'last name', required: true
-              .small-12.columns
-                = f.email_field :email, placeholder: 'email', required: true
-              .small-12.columns
-                = f.text_field :contact_number, placeholder: 'contact number', required: true
-              = f.button 'Claim my free trial', class: "small-12 medium-6 button"
+			.small-12.medium-8.small-centered.columns
+				#embeddedGymForm
+				:javascript
+					(function(d, t) {var form = d.createElement(t),options={'host': 'visionhealthandfitness.membr.com','ssl': true,'action': 'https://prod-api.membraws.com','gym': '596','form': 'form1','name': 'Register your interest','document': d,'fields': [{'name': 'title', 'status': 'active', 'type': 'label', 'label': 'Register your interest'},{'name': 'firstName', 'status': 'active', 'type': 'input', 'label': 'Enter your first name'},{'name': 'lastName', 'status': 'active', 'type': 'input', 'label': 'Enter your last name'},{'name': 'email', 'status': 'active', 'type': 'email', 'label': 'Enter your email address'},{'name': 'phoneNumber', 'status': 'active', 'type': 'tel', 'label': 'Enter your mobile number'},{'name': 'source', 'status': 'active', 'type': 'dropdown', 'label': 'How did you hear about us?', 'options': [{'id': 'leaflet', 'name': 'Leaflet'},{'id': 'online', 'name': 'Online'},{'id': 'newspaper', 'name': 'Newspaper'},{'id': 'google', 'name': 'Google'},{'id': 'friend', 'name': 'Friend'},{'id': 'search_engine', 'name': 'Search engine'},{'id': 'ex_member', 'name': 'Ex member'},{'id': 'signage', 'name': 'Signage'},{'id': 'social_media', 'name': 'Social media'},{'id': 'email', 'name': 'Email'},{'id': 'website', 'name': 'Website'},{'id': 'radio', 'name': 'Radio'},{'id': 'other', 'name': 'Other'}]}]};form.src = (options.ssl ? 'https://' : 'http://')+options.host+'/assets/js/embed.js';form.onload = form.onreadystatechange = function () {var currForm = new SalesForm(options);currForm.generateForm(d);};d.getElementById('embeddedGymForm').appendChild(form);})(document, 'script');

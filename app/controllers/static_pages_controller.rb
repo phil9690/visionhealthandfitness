@@ -69,4 +69,6 @@ class StaticPagesController < ApplicationController
   def ultimate_endurance
   end
 
+  def vhf_code_of_conduct
+  end
 end

@@ -12,51 +12,51 @@
 
 ActiveRecord::Schema.define(version: 20170430202036) do
 
-  create_table "membership_options", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.string   "description"
-    t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "membership_options", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "memberships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "phone_number"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.string   "card_token"
-    t.integer  "membership_option_id"
-    t.string   "title"
-    t.string   "address_line_1"
-    t.string   "address_line_2"
-    t.string   "city"
-    t.string   "post_code"
-    t.date     "dob"
-    t.boolean  "terms_accepted"
-    t.index ["membership_option_id"], name: "index_memberships_on_membership_option_id", using: :btree
+  create_table "memberships", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "card_token"
+    t.integer "membership_option_id"
+    t.string "title"
+    t.string "address_line_1"
+    t.string "address_line_2"
+    t.string "city"
+    t.string "post_code"
+    t.date "dob"
+    t.boolean "terms_accepted"
+    t.index ["membership_option_id"], name: "index_memberships_on_membership_option_id"
   end
 
-  create_table "trials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "contact_number"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "status"
-    t.index ["email"], name: "index_trials_on_email", unique: true, using: :btree
+  create_table "trials", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "contact_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+    t.index ["email"], name: "index_trials_on_email", unique: true
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "password_digest"
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+  create_table "users", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "memberships", "membership_options"
