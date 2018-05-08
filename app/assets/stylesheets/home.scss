@@ -23,6 +23,18 @@ $vhf-red: #B20000;
   margin-bottom: 30px;
 }
 
+.trial-banner #embeddedGymForm .btn-submit {
+  background: $vhf-red;
+  border: none;
+  border-radius: 0;
+  border: 0;
+}
+
+.trial-banner #embeddedGymForm .btn-submit:hover {
+  background: darken($vhf-red, 5%);
+  color: $white;
+}
+
 .trial-banner p {
   max-width: 60%;
   margin: 0 auto;
