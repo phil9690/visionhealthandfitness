@@ -1,0 +1,5 @@
+<%= @member.email %>
+<%= form_for @member, action: :post, url: "#{@member.consent_to_market_token}", html: {class: "consent_to_market_form"} do |f| %>
+  <%= f.check_box :consent_to_market %>
+  <%= f.submit %>
+<% end %>

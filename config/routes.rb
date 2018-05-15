@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     resources :memberships
   end
 
+  get '/members/:consent_to_market_token', to: 'members#consent_to_market'
+  patch '/members/:consent_to_market_token', to: 'members#set_consent_to_market'
+
   # Front end
   resources :trials,
             :memberships, only: [:new, :create, :index]
