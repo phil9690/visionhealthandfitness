@@ -5,10 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'jquery-turbolinks'
-
 # Foundation 6 for styling
 gem 'foundation-rails'
+
+gem 'js_cookie_rails'
 
 # HAML HTML preprocessor
 gem 'haml'
@@ -16,6 +16,13 @@ gem 'haml'
 gem 'pry'
 
 gem 'bcrypt'
+
+#gem 'gdpr_compliance', git: 'https://github.com/phil9690/gdpr_compliance.git', branch: 'javascript'
+#path '../' do
+#  gem 'gdpr_compliance'
+#end
+
+#gem 'cookies_eu'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'

@@ -20,9 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  domain: 'https://visionhealthandfitness.co.uk'
+
   contact_info:
     business_name: 'Vision Health and Fitness'
-    email: 'memberships@visionhealthandfitness.co.uk'
+    email:
+      memberships: 'memberships@visionhealthandfitness.co.uk'
+      compliance: 'compliance@visionhealthandfitness.co.uk'
     phone_number: '0191 447 6919'
     address:
       line_1: '2 Sands Industrial Estate'
@@ -70,3 +74,41 @@ en:
     total_body: 'Total Body'
     trx: 'TRX'
     ultimate_endurance: 'Ultimate Endurance'
+
+  gdpr_compliance:
+    dialog:
+      heading: 'This website uses cookies'
+      body:
+        cookie_introduction:
+          'To make sure you get the best experience on our website we use cookies. 
+          Find out more by reading our privacy policy, or find out more about cookies.'
+
+        marketing:
+          title: 'Marketing'
+          checkbox_label: 'Marketing'
+          introduction:
+            'Marketing cookies are used to track visitors across websites. The intention is to display ads that are 
+            relevant and engaging for the individual user and thereby more valuable for publishers and third party 
+            advertisers.'
+
+        necessary:
+          title: 'Necessary'
+          checkbox_label: 'Necessary'
+          introduction:
+            'Necessary cookies help make a website usable by enabling basic functions like page navigation and 
+            access to secure areas of the website. The website cannot function properly without these cookies.'
+
+        preferences:
+          title: 'Preferences'
+          checkbox_label: 'Preferences'
+          introduction:
+            'Preference cookies enable a website to remember information that changes the way the website behaves or 
+            looks, like your preferred language or the region that you are in.'
+
+        statistics:
+          title: 'Statistics'
+          checkbox_label: 'Statistics'
+          introduction:
+            'Statistics cookies help website owners understand how visitors interact with websites by collecting and 
+            reporting information anonymously.'
+

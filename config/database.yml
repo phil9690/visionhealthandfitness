@@ -3,9 +3,9 @@ default: &default
   encoding: utf8
   pool: 5
   timeout: 5000
-  host: <%= ENV['DATA_MYSQL_HOST'] %>
-  username: <%= ENV['DATA_MYSQL_USER'] %>
-  password: <%= ENV['DATA_MYSQL_PASS'] %>
+  host: <%= ENV['DATA_MYSQL_HOST'] || 'localhost' %>
+  username: <%= ENV['DATA_MYSQL_USER'] || ENV['MYSQL_USERNAME'] %>
+  password: <%= ENV['DATA_MYSQL_PASS'] || ENV['MYSQL_PASSWORD'] %>
 
 development:
   <<: *default

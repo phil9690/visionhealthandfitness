@@ -1,0 +1,78 @@
+<div class="reveal medium" id="gdpr_compliance_banner" data-reveal data-close-on-click="false" data-close-on-esc="false">
+  <div class="small-12 columns">
+    <div class="gdpr_compliance_banner_heading">
+      <%= I18n.t('gdpr_compliance.dialog.heading') %>
+    </div>
+    <div class="gdpr_compliance_banner_text">
+      <p>To make sure you get the best experience on our website we use cookies. Find out more by reading our <%= link_to 'privacy policy', privacy_policy_path %>, or <%= link_to 'find out more about cookies', cookie_policy_path %>.</p>
+    </div>
+
+    <form class="gdpr_compliance_form">
+      <div>
+        <div class="gdpr_compliance_section">
+          <div>
+            <input id="gdpr_compliance_necessary" type="checkbox" disabled="true" checked>
+            <label for="gdpr_compliance_necessary">
+              <%= I18n.t('gdpr_compliance.dialog.body.necessary.checkbox_label') %>
+            </label>
+          </div>
+          <div id="gdpr_compliance_necessary_text">
+            <%= I18n.t('gdpr_compliance.dialog.body.necessary.introduction') %>
+            <button data-toggle="read-more" href="#">SHOW MORE <i class="fa fa-plus"></i></button>
+            <div class="read-more" id="read-more" data-toggler data-animate="hinge-in-from-top spin-out">
+              <p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gdpr_compliance_section">
+          <div>
+            <input id="gdpr_compliance_preferences" type="checkbox" checked>
+            <label for="gdpr_compliance_preferences">
+              <%= I18n.t('gdpr_compliance.dialog.body.preferences.checkbox_label') %>
+            </label>
+          </div>
+          <div id="gdpr_compliance_preferences_text">
+            <%= I18n.t('gdpr_compliance.dialog.body.preferences.introduction') %>
+          </div>
+        </div>
+
+        <div class="gdpr_compliance_section">
+          <div>
+            <input id="gdpr_compliance_statistics" type="checkbox" checked>
+            <label for="gdpr_compliance_statistics">
+              <%= I18n.t('gdpr_compliance.dialog.body.statistics.checkbox_label') %>
+            </label>
+          </div>
+          <div id="gdpr_compliance_statistics_text">
+            <%= I18n.t('gdpr_compliance.dialog.body.statistics.introduction') %>
+          </div>
+        </div>
+
+        <div class="gdpr_compliance_section">
+          <div>
+            <input id="gdpr_compliance_marketing" type="checkbox">
+            <label for="gdpr_compliance_marketing">
+              <%= I18n.t('gdpr_compliance.dialog.body.marketing.checkbox_label') %>
+            </label>
+          </div>
+          <div id="gdpr_compliance_marketing_text">
+            <%= I18n.t('gdpr_compliance.dialog.body.marketing.introduction') %>
+          </div>
+        </div>
+
+        <div class="gdpr_compliance_policy_links">
+          <p>For further information, please refer to our policies here:</p>
+          <ul>
+            <li><%= link_to 'Cookie Policy', cookie_policy_path, target: '_blank' %></li>
+            <li><%= link_to 'Privacy Policy', privacy_policy_path, target: '_blank' %></li>
+          </ul>
+        </div>
+
+        <div class="gdpr_compliance_button">
+          <input id="gdpr_compliance_button" type="button" value="Submit" class="button">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

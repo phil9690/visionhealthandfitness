@@ -9,7 +9,16 @@ Rails.application.routes.draw do
     resources :memberships
   end
 
-  get '/members/:consent_to_market_token', to: 'members#consent_to_market'
+	scope '/policies' do
+  	get '/cookie_policy', to: 'static_pages#cookie_policy', as: 'cookie_policy'
+  	get '/privacy_policy', to: 'static_pages#privacy_policy', as: 'privacy_policy'
+	end
+
+  get '/members', to: 'members#index'
+  post '/members/import', to: 'members#import', as: 'import_members'
+
+  get '/members/:consent_to_market_token', to: 'members#consent_to_market', as: :consent_to_market
+  get '/members/consent_accepted/:consent_to_market_token', to: 'members#consent_accepted', as: :consent_accepted
   patch '/members/:consent_to_market_token', to: 'members#set_consent_to_market'
 
   # Front end

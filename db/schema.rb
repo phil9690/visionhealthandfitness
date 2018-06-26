@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170430202036) do
+ActiveRecord::Schema.define(version: 20180508215457) do
+
+  create_table "members", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "email"
+    t.string "phone_number"
+    t.string "first_name"
+    t.string "last_name"
+    t.boolean "consent_to_market", default: false
+    t.datetime "consent_to_market_date"
+    t.string "consent_to_market_ip"
+    t.string "consent_to_market_token"
+    t.string "consent_to_market_ip_address"
+    t.string "member_type"
+    t.boolean "active"
+    t.boolean "email_sent", default: false
+    t.boolean "text_message_1_sent", default: false
+    t.boolean "text_message_2_sent", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "membership_options", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"

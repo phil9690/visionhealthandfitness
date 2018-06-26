@@ -3,6 +3,12 @@ class StaticPagesController < ApplicationController
     @trial = Trial.new
   end
 
+  def privacy_policy
+  end
+
+	def cookie_policy
+	end
+
   def contact
   end
 

@@ -10,7 +10,7 @@
           %span= "#{t('contact_info.address.city')},"
           %span= t('contact_info.address.post_code')
           %span= t('contact_info.phone_number')
-          %span= t('contact_info.email')
+          %span= t('contact_info.email.memberships')
 
       .small-12.medium-3.columns
         .site-links
@@ -28,6 +28,8 @@
           %ul
             %li= link_to 'VHF Code of Conduct', vhf_code_of_conduct_path
             %li= link_to 'Health Commitment Statement', asset_path('/pdfs/VHF_HCF.pdf')
+            %li= link_to 'Privacy Policy', privacy_policy_path
+            %li= link_to 'Cookie Policy', cookie_policy_path
 
         .social-links
           %h5 Social Links

@@ -1,48 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+		<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
+		<%= stylesheet_link_tag    "application" %>
+		<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
 
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-
-    <%= csrf_meta_tags %>
-
-    <link href="https://fonts.googleapis.com/css?family=Nunito|Open+Sans" rel="stylesheet">
-
-		<script>
-			!function(f,b,e,v,n,t,s)
-			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-			n.queue=[];t=b.createElement(e);t.async=!0;
-			t.src=v;s=b.getElementsByTagName(e)[0];
-			s.parentNode.insertBefore(t,s)}(window, document,'script',
-			'https://connect.facebook.net/en_US/fbevents.js');
-			fbq('init', '529384880580258');
-			fbq('track', 'PageView');
-		</script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=529384880580258&ev=PageView&noscript=1"/></noscript>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117086197-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-117086197-1');
-    </script>
-  </head>
+		<link href="https://fonts.googleapis.com/css?family=Nunito|Open+Sans" rel="stylesheet">
+	</head>
 
   <body>
-    <%= render 'layouts/nav' %>
+		<%= render 'layouts/nav' %>
 
-    <%= render 'shared/flash_messages' %>
+		<%= render 'shared/flash_messages' %>
+		<%= render 'gdpr_compliance/gdpr_compliance_banner' %>
+		<%= yield %>
 
-    <%= yield %>
-
-    <%= render 'layouts/footer' %>
-  </body>
+		<%= render 'layouts/footer' %>
+	</body>
 </html>

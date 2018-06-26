@@ -14,11 +14,27 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require turbolink_handler
+//= require gdpr_compliance
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
-  $(function(){ $(document).foundation(); });
-  $(window).trigger('load.zf.sticky');
 });
 
 $(function(){ $(document).foundation(); });
+
+var tl = new turbolinkHandler();
+
+var runGdprCompliance = function() {
+  var gdprCompliance = new GDPRCompliance();
+  if (!gdprCompliance.allCookiesExist()) {
+    $(document).ready(function(){$('#gdpr_compliance_banner').foundation('open')});
+    gdprCompliance.gdprSubmitButtonListen();
+  }
+};
+
+document.addEventListener(tl.eventName("DOMContentLoaded"), function() {
+	runGdprCompliance();
+  $(function(){ $(document).foundation(); });
+  $(window).trigger('load.zf.sticky');
+});
