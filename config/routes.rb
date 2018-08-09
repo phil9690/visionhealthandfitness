@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     resources :memberships
   end
 
+  get '/cramlington', to: 'static_pages#cramlington', as: 'cramlington'
+  post '/cramlington/register-lead-interest', to: 'static_pages#cramlington_register_lead_interest', as: 'cramlington_register_lead_interest'
+  get '/cramlington/register-interest-confirmation', to: 'static_pages#register_interest_confirmation', as: 'register_interest_confirmation'
+
 	scope '/policies' do
   	get '/cookie_policy', to: 'static_pages#cookie_policy', as: 'cookie_policy'
   	get '/privacy_policy', to: 'static_pages#privacy_policy', as: 'privacy_policy'

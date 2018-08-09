@@ -77,4 +77,52 @@ class StaticPagesController < ApplicationController
 
   def vhf_code_of_conduct
   end
+
+  def cramlington
+  end
+
+  def cramlington_register_lead_interest
+    lead = cramlington_register_interest_params
+    gibbon = Gibbon::Request.new
+    member = gibbon.lists('044cf090f6').members.create(
+      body: {
+        email_address: lead[:email_address],
+        status: "subscribed",
+        merge_fields: {
+          FNAME: lead[:first_name],
+          LNAME: lead[:last_name],
+          MOBILE: lead[:contact_number],
+          ECONSENT: boolean_mapping[lead[:email_consent]],
+          TCONSENT: boolean_mapping[lead[:text_consent]]
+        }
+      }
+    )
+
+  rescue Gibbon::MailChimpError => e
+    flash[:alert] = 'There was an error, please make sure all your details are correct'
+    return render action: :cramlington
+
+    if member
+      require 'pry'; binding.pry
+      redirect_to register_interest_confirmation_url
+    else
+      render action: :cramlington
+    end
+  end
+
+  def register_interest_confirmation
+  end
+
+  def cramlington_register_interest_params
+    params.require(:lead).permit(:first_name, :last_name, :email_address, :contact_number, :email_consent, :text_consent)
+  end
+
+	private
+
+	def boolean_mapping
+		{
+			"0" => 'NO',
+			"1" => 'YES'
+		}
+	end
 end

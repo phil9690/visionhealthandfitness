@@ -1,0 +1,86 @@
+<div class="row expanded promo-video-container">
+  <div class="small-12 medium-8 medium-centered columns promo-video">
+    <iframe allow="autoplay; encrypted-media" frameborder="0" src="https://www.youtube.com/embed/ip6PUnS4Rlw?rel=0&controls=1&showinfo=0&autoplay=1" width="600"></iframe>
+  </div>
+</div>
+
+<div class="row">
+	<div class="small-12 medium-8 columns small-centered">
+		<div class="promo-text">
+			<p>
+				Vision Health and Fitness Cramlington will be opening soon. Before we open the doors we will be offering limited 
+				pre-opening membership deals, available exclusively online. If you would like to be notified when they go live, 
+				please complete the form below and we will contact you by email and/or text. If you prefer not to receive text 
+				messages, do not provide your mobile number.
+			</p>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="small-12 medium-8 small-centered columns">
+    <div class="register-interest-form">
+
+      <% if flash[:alert] %>
+        <div class="callout alert" data-closable>
+          <%= flash[:alert] %>
+          <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+
+      <h5 class="register-interest-form-title">Register your interest</h5>
+
+      <%= form_for :lead, url: { controller: 'static_pages', action: 'cramlington_register_lead_interest' } do |f| %>
+        <div class="row">
+          <div class="small-12 medium-6 columns">
+            <%= f.text_field :first_name, placeholder: 'first name' %>
+          </div>
+
+          <div class="small-12 medium-6 columns">
+            <%= f.text_field :last_name, placeholder: 'last name' %>
+          </div>
+
+          <div class="small-12 medium-6 columns">
+            <%= f.text_field :email_address, placeholder: 'email' %>
+          </div>
+
+          <div class="small-12 medium-6 columns">
+            <%= f.text_field :contact_number, placeholder: 'contact number' %>
+          </div>
+
+          <div class="small-12 columns small-centered">
+            <p class="marketing-permissions-title">Marketing Permissions</p>
+            <p class="marketing-permissions-text">From time to time Vision Health and Fitness Club Limited would like to use the information you provide on this form to keep you up to date with our latest information and offers. Please let us know all the ways you would like to hear from us:</p>
+          </div>
+
+          <div class="marketing-permissions columns">
+            <div class="small-12 columns">
+              <%= f.check_box :email_consent %>
+              <%= f.label :email_consent, 'Email', class: 'text-left' %>
+            </div>
+
+            <div class="small-12 columns">
+              <%= f.check_box :text_consent %>
+              <%= f.label :text_consent, 'Text Message', class: 'text-left' %>
+            </div>
+          </div>
+
+          <div class="marketing-permissions-text small-12 columns">
+            <p>You can change your mind at any time by clicking the unsubscribe link in the footer of any email you receive from us, or by contacting us at compliance@visionhealthandfitness.co.uk. We will treat your information with respect. For more information about our privacy practices please read our Privacy Policy. By clicking below, you agree that we may process your information in accordance with these terms.</p>
+          </div>
+
+          <div class="marketing-permissions-text small-12 columns">
+            <p>We use MailChimp as our marketing automation platform. By clicking below to submit, you acknowledge that the information you provide will be transferred to MailChimp for processing in accordance with their Privacy Policy and Terms. We use TextMarketer as our text messaging platform. By clicking below to submit, If you have agreed to receive marketing material from us via text message, you acknowledge that the information you provide will be transferred to textMarketer for processing in accordance with their Privacy Policy and Terms.</p>
+
+          </div>
+
+          <div class="small-12 columns text-center">
+            <%= f.button 'Register Interest', class: 'button' %>
+          </div>
+        </div>
+      <% end %>
+			</div>
+	</div>
+</div>

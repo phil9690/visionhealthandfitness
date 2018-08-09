@@ -17,12 +17,9 @@
             </label>
           </div>
           <div id="gdpr_compliance_necessary_text">
-            <%= I18n.t('gdpr_compliance.dialog.body.necessary.introduction') %>
-            <button data-toggle="read-more" href="#">SHOW MORE <i class="fa fa-plus"></i></button>
-            <div class="read-more" id="read-more" data-toggler data-animate="hinge-in-from-top spin-out">
-              <p>
-            </div>
+            <p><%= I18n.t('gdpr_compliance.dialog.body.necessary.introduction') %></p>
           </div>
+        </div>
         </div>
 
         <div class="gdpr_compliance_section">
@@ -33,7 +30,7 @@
             </label>
           </div>
           <div id="gdpr_compliance_preferences_text">
-            <%= I18n.t('gdpr_compliance.dialog.body.preferences.introduction') %>
+            <p><%= I18n.t('gdpr_compliance.dialog.body.preferences.introduction') %></p>
           </div>
         </div>
 
@@ -45,7 +42,7 @@
             </label>
           </div>
           <div id="gdpr_compliance_statistics_text">
-            <%= I18n.t('gdpr_compliance.dialog.body.statistics.introduction') %>
+            <p><%= I18n.t('gdpr_compliance.dialog.body.statistics.introduction') %></p>
           </div>
         </div>
 
@@ -57,18 +54,9 @@
             </label>
           </div>
           <div id="gdpr_compliance_marketing_text">
-            <%= I18n.t('gdpr_compliance.dialog.body.marketing.introduction') %>
+            <p><%= I18n.t('gdpr_compliance.dialog.body.marketing.introduction') %></p>
           </div>
         </div>
-
-        <div class="gdpr_compliance_policy_links">
-          <p>For further information, please refer to our policies here:</p>
-          <ul>
-            <li><%= link_to 'Cookie Policy', cookie_policy_path, target: '_blank' %></li>
-            <li><%= link_to 'Privacy Policy', privacy_policy_path, target: '_blank' %></li>
-          </ul>
-        </div>
-
         <div class="gdpr_compliance_button">
           <input id="gdpr_compliance_button" type="button" value="Submit" class="button">
         </div>

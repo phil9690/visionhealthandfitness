@@ -17,6 +17,8 @@ gem 'pry'
 
 gem 'bcrypt'
 
+gem 'gibbon'
+
 #gem 'gdpr_compliance', git: 'https://github.com/phil9690/gdpr_compliance.git', branch: 'javascript'
 #path '../' do
 #  gem 'gdpr_compliance'
