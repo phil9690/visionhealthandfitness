@@ -1,25 +1,111 @@
-<div class="row expanded promo-video-container">
-  <div class="small-12 medium-8 medium-centered columns promo-video">
-    <iframe allow="autoplay; encrypted-media" frameborder="0" src="https://www.youtube.com/embed/ip6PUnS4Rlw?rel=0&controls=1&showinfo=0&autoplay=1" width="600"></iframe>
+<div class="row expanded collapse">
+  <div class="small-12 columns">
+    <div class="bg-image promo-banner">
+      <div class="small-12 medium-9 small-centered columns">
+        <div class="promo-banner-sticker-container">
+          <div class="promo-banner-sticker">
+            <div class="promo-banner-sticker-text">
+              <div><span>Opening</span></div>
+              <div><span>January</span></div>
+              <div><span>2019</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="promo-banner-text">
+        <div class="small-12 medium-9 small-centered columns">
+          <span>VISION HEALTH AND FITNESS</span>
+          <h2>CRAMLINGTON</h2>
+          <a href="#register-interest-form-link" class="button promo-button promo-button-link">REGISTER YOUR INTEREST</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="row">
 	<div class="small-12 medium-8 columns small-centered">
-		<div class="promo-text">
-			<p>
-				Vision Health and Fitness Cramlington will be opening soon. Before we open the doors we will be offering limited 
-				pre-opening membership deals, available exclusively online. If you would like to be notified when they go live, 
-				please complete the form below and we will contact you by email and/or text. If you prefer not to receive text 
-				messages, do not provide your mobile number.
-			</p>
+    <div class="promo-text">
+      <p>Be part of the Vision experience! With over £1.5 million invested in our new ultra modern 20,000 sq/ft training facility, members will benefit from the very latest training equipment and multi-site access as standard. With every thing you could need to train at an unbeatable price, there has never been a better time to join.</p>
+      <p>Register your interest below to receive amazing early sign-up membership offers and the chance to win 1 of 5 *free 1 year memberships that we are giving away. These offers will be exclusively available to new customers who pre-register online and will end once the gym opens. Don’t miss out on your chance to take advantage of these amazing offers and register today.</p>
+      <p class="text-small"><i>*free membership give away is only available to new customers who have never registered with us before.</i></p>
 		</div>
 	</div>
 </div>
 
-<div class="row">
+<div class="promo-icons">
+  <div class="row">
+    <div class="medium-3 small-6 columns">
+      <div class="promo-icon-container">
+        <i class="flaticon-calendar fi promo-icon"></i>
+      </div>
+      <div class="promo-icon-title">200+ CLASSES</div>
+      <div class="promo-icon-body">Over 200 classes a month included in your membership. Get fit, have fun.</div>
+    </div>
+
+    <div class="medium-3 small-6 columns">
+      <div class="promo-icon-container">
+        <i class="flaticon-heartbeat fi promo-icon"></i>
+      </div>
+      <div class="promo-icon-title">FUNCTIONAL HIIT ZONE</div>
+      <div class="promo-icon-body">Custom assault rig and state of the art HIIT zone, are you Ninja warrior ready?</div>
+    </div>
+
+    <div class="medium-3 small-6 columns">
+      <div class="promo-icon-container">
+        <i class="flaticon-running fi promo-icon"></i>
+      </div>
+      <div class="promo-icon-title">PROWLER &amp; SPRINT TRACK</div>
+      <div class="promo-icon-body">20m sprint track with Prowler and Tank to explode your workouts.</div>
+    </div>
+
+    <div class="medium-3 small-6 columns">
+      <div class="promo-icon-container">
+        <i class="flaticon-weightlifting-1 fi promo-icon"></i>
+      </div>
+      <div class="promo-icon-title">200+ MACHINES</div>
+      <div class="promo-icon-body">State of the art Cardio, Strength, Resistance, & Functional machines all provided by Precor and Hammer Strength.</div>
+    </div>
+
+    <div class="medium-3 small-6 columns">
+      <div class="promo-icon-container">
+        <i class="flaticon-weightlifting fi promo-icon"></i>
+      </div>
+      <div class="promo-icon-title">FREE WEIGHTS ZONE</div>
+      <div class="promo-icon-body">Massive area with over 20 benches and dumbells up to 60KG</div>
+    </div>
+
+    <div class="medium-3 small-6 columns">
+      <div class="promo-icon-container">
+        <i class="flaticon-gym fi promo-icon"></i>
+      </div>
+      <div class="promo-icon-title">PERSONAL TRAINERS</div>
+      <div class="promo-icon-body">Take your training to the next level with one of our expert Personal Trainers.</div>
+    </div>
+
+    <div class="medium-3 small-6 columns">
+      <div class="promo-icon-container">
+        <i class="flaticon-shower fi promo-icon"></i>
+      </div>
+      <div class="promo-icon-title">CHANGING FACILITIES</div>
+      <div class="promo-icon-body">Our luxury changing rooms provide warm, spacious and secure facilities for men and women.</div>
+    </div>
+
+    <div class="medium-3 small-6 columns">
+      <div class="promo-icon-container">
+        <i class="flaticon-car fi promo-icon"></i>
+      </div>
+      <div class="promo-icon-title">FREE PARKING</div>
+      <div class="promo-icon-body">Free onsite parking in our secure, gated, and CCTV monitored car park.</div>
+    </div>
+  </div>
+</div>
+
+<div id="register-interest-form-link"></div>
+
+<div class="row" id="register-interest">
 	<div class="small-12 medium-8 small-centered columns">
-    <div class="register-interest-form">
+    <div class="register-interest-form" id="register-interest-form">
 
       <% if flash[:alert] %>
         <div class="callout alert" data-closable>
@@ -32,7 +118,7 @@
 
       <h5 class="register-interest-form-title">Register your interest</h5>
 
-      <%= form_for :lead, url: { controller: 'static_pages', action: 'cramlington_register_lead_interest' } do |f| %>
+      <%= form_for :lead, url: { controller: 'static_pages', action: 'cramlington_register_lead_interest' }, data: {'register-interest-form' => true}, remote: true do |f| %>
         <div class="row">
           <div class="small-12 medium-6 columns">
             <%= f.text_field :first_name, placeholder: 'first name' %>
@@ -68,19 +154,32 @@
           </div>
 
           <div class="marketing-permissions-text small-12 columns">
-            <p>You can change your mind at any time by clicking the unsubscribe link in the footer of any email you receive from us, or by contacting us at compliance@visionhealthandfitness.co.uk. We will treat your information with respect. For more information about our privacy practices please read our Privacy Policy. By clicking below, you agree that we may process your information in accordance with these terms.</p>
+            <p>You can change your mind at any time by clicking the unsubscribe link in the footer of any email you receive from us, or by contacting us at compliance@visionhealthandfitness.co.uk. We will treat your information with respect. For more information about our privacy practices please read our <%= link_to 'Privacy Policy', privacy_policy_path %>. By clicking below, you agree that we may process your information in accordance with these terms.</p>
           </div>
 
           <div class="marketing-permissions-text small-12 columns">
-            <p>We use MailChimp as our marketing automation platform. By clicking below to submit, you acknowledge that the information you provide will be transferred to MailChimp for processing in accordance with their Privacy Policy and Terms. We use TextMarketer as our text messaging platform. By clicking below to submit, If you have agreed to receive marketing material from us via text message, you acknowledge that the information you provide will be transferred to textMarketer for processing in accordance with their Privacy Policy and Terms.</p>
-
+            <p>We use MailChimp as our marketing automation platform. By clicking below to submit, you acknowledge that the information you provide will be transferred to MailChimp for processing in accordance with their Privacy Policy and Terms, <a href="https://mailchimp.com/legal/">found here</a>. We use TextMarketer as our text messaging platform. By clicking below to submit, If you have agreed to receive marketing material from us via text message, you acknowledge that the information you provide will be transferred to textMarketer for processing in accordance with their Privacy Policy and Terms, <a href="https://www.textmarketer.co.uk/pdfebooks/Text_Marketer_Privacy_Policy.pdf">found here</a></p>
           </div>
 
           <div class="small-12 columns text-center">
-            <%= f.button 'Register Interest', class: 'button' %>
+            <%= f.button 'Register Your Interest', class: 'button promo-button register-interest-submit-button', onclick: 'completeRegistration()' %>
           </div>
         </div>
       <% end %>
 			</div>
 	</div>
+</div>
+
+<div class="row expanded promo-video-container">
+  <div class="small-12 medium-8 medium-centered columns promo-video">
+    <iframe allow="autoplay; encrypted-media" frameborder="0" src="https://www.youtube.com/embed/ip6PUnS4Rlw?rel=0&controls=1&showinfo=0&autoplay=1" width="600"></iframe>
+  </div>
+</div>
+
+<div class="map-container">
+  <div class="row">
+    <div class="small-12 columns">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2282.8023445171852!2d-1.6009393841842128!3d55.09922508038361!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e731363793bb3%3A0x303b111a87e9c190!2sCrowhall+Rd%2C+Cramlington+NE23+1WH!5e0!3m2!1sen!2suk!4v1535318686755" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+  </div>
 </div>

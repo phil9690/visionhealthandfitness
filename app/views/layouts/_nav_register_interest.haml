@@ -1,0 +1,21 @@
+.title-bar{"data-hide-for" => "medium", "data-responsive-toggle" => "nav"}
+  .menu-logo
+    = link_to root_path do
+      = image_tag('logo-small.png')
+  .float-right
+    %button.menu-icon{"data-toggle" => "", :type => "button"}
+    .title-bar-title Menu
+
+%div{"data-sticky-container" => ""}
+  #nav.top-bar{"data-options" => "anchor: page; marginTop: 0; stickyOn: small;", "data-sticky" => "", :style => "width: 100%;"}
+    .top-bar-left
+      %ul.menu
+        %li.menu-logo
+          = link_to root_path do
+            = image_tag('logo-small.png')
+    .top-bar-right
+      %ul.medium-horizontal.vertical.dropdown.menu{"data-responsive-menu" => "accordion medium-dropdown"}
+        %li
+          = link_to 'Home', root_path
+        %li
+          = link_to 'Contact', new_message_path

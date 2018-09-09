@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  layout 'register_interest', only: [:cramlington]
+
   def home
     @trial = Trial.new
   end
@@ -98,16 +100,14 @@ class StaticPagesController < ApplicationController
       }
     )
 
-  rescue Gibbon::MailChimpError => e
-    flash[:alert] = 'There was an error, please make sure all your details are correct'
-    return render action: :cramlington
-
-    if member
-      require 'pry'; binding.pry
-      redirect_to register_interest_confirmation_url
-    else
-      render action: :cramlington
+    respond_to do |format|
+      format.js { render 'static_pages/register_interest_confirmation'}
     end
+
+  rescue Gibbon::MailChimpError => e
+    require 'pry'; binding.pry
+    flash[:alert] = "#{e.detail}"
+    redirect_to cramlington_path
   end
 
   def register_interest_confirmation
