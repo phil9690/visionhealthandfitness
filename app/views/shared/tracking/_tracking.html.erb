@@ -1,0 +1,4 @@
+<% if ENV['RAILS_ENV'] == 'production' || ENV['RAILS_ENV'] == 'staging' %>
+  <%= render 'shared/tracking/facebook_pixel' %>
+  <%= render 'shared/tracking/google_analytics' %>
+<% end %>

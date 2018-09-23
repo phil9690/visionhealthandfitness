@@ -83,10 +83,13 @@ class StaticPagesController < ApplicationController
   def cramlington
   end
 
+  def cramlington_gym_info
+  end
+
   def cramlington_register_lead_interest
     lead = cramlington_register_interest_params
     gibbon = Gibbon::Request.new
-    member = gibbon.lists('044cf090f6').members.create(
+    @member = gibbon.lists(ENV['MAILCHIMP_CRAMLINGTON_PRESALE_LIST']).members.create(
       body: {
         email_address: lead[:email_address],
         status: "subscribed",
@@ -100,17 +103,21 @@ class StaticPagesController < ApplicationController
       }
     )
 
-    respond_to do |format|
-      format.js { render 'static_pages/register_interest_confirmation'}
+    session[:registered_interest_cramlington] = true
+
+    if @member
+      redirect_to register_interest_confirmation_path
     end
 
   rescue Gibbon::MailChimpError => e
-    require 'pry'; binding.pry
     flash[:alert] = "#{e.detail}"
     redirect_to cramlington_path
   end
 
   def register_interest_confirmation
+    if session[:registered_interest_cramlington] != true
+      redirect_to root_path
+    end
   end
 
   def cramlington_register_interest_params
