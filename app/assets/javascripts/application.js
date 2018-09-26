@@ -38,5 +38,3 @@ document.addEventListener(tl.eventName("DOMContentLoaded"), function() {
   $(function(){ $(document).foundation(); });
   $(window).trigger('load.zf.sticky');
 });
-
-  fbq('track', 'CompleteRegistration');

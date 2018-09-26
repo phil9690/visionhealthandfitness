@@ -6,6 +6,8 @@
       <div class="row" id="register-interest">
         <div class="small-12 medium-8 small-centered columns">
           <div class="register-interest-form" id="register-interest-form">
+            <div class="small-12 columns cramlington-form-main-text">
+            <h2>Register Your Interest</h2>
             <p>
               Be part of the Vision experience! With over £1.5 million invested in our new ultra modern
               20,000 sq/ft training facility, members will benefit from the very latest training
@@ -13,6 +15,7 @@
               an unbeatable price, there has never been a better time to join. Register your 
               interest below to receive amazing early sign-up membership offers.
             </p>
+            </div>
 
             <% if flash[:alert] %>
               <div class="callout alert" data-closable>
@@ -23,7 +26,7 @@
               </div>
             <% end %>
 
-            <%= form_for :lead, url: { controller: 'static_pages', action: 'cramlington_register_lead_interest' }, data: {'register-interest-form' => true}, remote: true do |f| %>
+            <%= form_for :lead, url: { controller: 'static_pages', action: 'cramlington_register_lead_interest' } do |f| %>
               <div class="row">
                 <div class="small-12 medium-6 columns">
                   <%= f.text_field :first_name, placeholder: 'first name' %>
@@ -67,7 +70,7 @@
                 </div>
 
                 <div class="small-12 columns text-center">
-                  <%= f.button 'Register Your Interest', class: 'button promo-button register-interest-submit-button', onclick: 'completeRegistration()' %>
+                  <%= f.button 'Register Your Interest', class: 'button promo-button register-interest-submit-button' %>
                 </div>
               </div>
             <% end %>

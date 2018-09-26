@@ -1,4 +1,9 @@
 <% title 'Cramlington Register Interest Confirmation' %>
+<% content_for :facebook_tracking_event do %>
+    <script>
+      fbq('track', 'CompleteRegistration');
+  </script>
+<% end %>
 
 <div class="row expanded collapse">
   <div class="small-12 columns">
@@ -6,7 +11,7 @@
       <div class="confirmation-banner-text">
         <div class="small-12 medium-9 small-centered columns">
           <h2>REGISTRATION COMPLETE</h2>
-          <span>Thank you, your details have been registered with us. Keep an eye out in inbox for information about the upcoming offers and promo codes.</span>
+          <span>Thank you, your details have been registered with us. Keep an eye out in your inbox for information about the upcoming offers, promo codes and instructions on how to join.</span>
         </div>
       </div>
     </div>
