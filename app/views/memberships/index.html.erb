@@ -4,12 +4,17 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="small-12 columns text-center">
+    <p><i>Below are the current membership packages we offer. Click Join Now to proceed to our signup process.</i></p>
+  </div>
+</div>
+
 <div class="row vertical-spacing">
   <div class="small-12 columns">
     <div class="memberships">
-      <div class="row vertical-spacing">
+      <div class="row">
         <div class="small-12 columns monthly-memberships">
-          <h3 class="underline">Monthly Memberships</h3>
           <div class="small-12 medium-4 columns">
             <div class="membership-option">
               <div class="membership-title">
@@ -24,9 +29,6 @@
                   <li>Use of all facilities at all times</li>
                   <li>Includes over 200 classes per month</li>
                 </ul>
-              </div>
-              <div class="membership-link">
-                <button class="button join-button" id="peak_membership" data-open="privacy_statement_peak">Join Now</button>
               </div>
             </div>
           </div>
@@ -45,9 +47,6 @@
                   <li>Over 200 classes per month including Boxing, MMA, Strength and Conditioning</li>
                 </ul>
               </div>
-              <div class="membership-link">
-                <button class="button join-button" id="platinum_membership" data-open="privacy_statement_platinum">Join Now</button>
-              </div>
             </div>
           </div>
           <div class="small-12 medium-4 columns">
@@ -65,9 +64,6 @@
                   <li>Includes over 200 classes per month</li>
                 </ul>
               </div>
-              <div class="membership-link">
-                <button class="button join-button" id="flexi_membership" data-open="privacy_statement_flexi">Join Now</button>
-              </div>
             </div>
           </div>
         </div>
@@ -76,45 +72,30 @@
   </div>
 </div>
 
-<div class="reveal small" id="privacy_statement_peak" data-reveal>
-  <%= render partial: '/gdpr_compliance/sign_up_privacy_statement' %>
+<div class="row">
+  <div class="small-12 columns">
+    <div class="membership-link text-center">
+      <button class="button large join-button" data-open="privacy_statement">Join Now</button>
+    </div>
+  </div>
+</div>
+
+<div class="reveal small" id="privacy_statement" data-reveal>
+  <div id="privacy-statement-container">
+    <%= render partial: '/gdpr_compliance/sign_up_privacy_statement' %>
+  </div>
 
   <div class="row">
-    <div class="small-6 small-centered text-center columns">
-      <div class="membership-link">
-        <%= link_to 'join now', 'https://visionhealthandfitness.membr.com/register/gym/vision-health-and-fitness/package/peak-membership1', class: 'button' %>
-      </div>
+    <div class="small-12 small-centered text-center columns">
+      <p class="privacy-statement-notice">Please scroll down to read the full privacy statement, then click continue.</p>
     </div>
   </div>
 
-  <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-
-<div class="reveal small" id="privacy_statement_platinum" data-reveal>
-  <%= render partial: '/gdpr_compliance/sign_up_privacy_statement' %>
 
   <div class="row">
     <div class="small-6 small-centered text-center columns">
       <div class="membership-link">
-        <%= link_to 'join now', 'https://visionhealthandfitness.membr.com/register/gym/vision-health-and-fitness/package/platinum-membership1', class: 'button' %>
-      </div>
-    </div>
-  </div>
-
-  <button class="close-button" data-close aria-label="Close modal" type="button">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>
-
-<div class="reveal small" id="privacy_statement_flexi" data-reveal>
-  <%= render partial: '/gdpr_compliance/sign_up_privacy_statement' %>
-
-  <div class="row">
-    <div class="small-6 small-centered text-center columns">
-      <div class="membership-link">
-        <%= link_to 'join now', 'https://visionhealthandfitness.membr.com/register/gym/vision-health-and-fitness/package/flexi-membership', class: 'button' %>
+        <%= link_to 'Continue', 'https://visionhealthandfitness.membr.com/register', class: 'button' %>
       </div>
     </div>
   </div>

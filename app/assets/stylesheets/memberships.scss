@@ -58,3 +58,20 @@ $vhf-red: #B20000;
   display: block;
   color: $vhf-red;
 }
+
+#privacy-statement-container {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.privacy-statement-notice {
+  font-style: italic;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  #privacy-statement-container {
+    max-height: 350px;
+  }
+}

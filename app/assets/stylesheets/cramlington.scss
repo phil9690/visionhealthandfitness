@@ -129,6 +129,15 @@ $vhf-red: #B20000;
   letter-spacing: 1px;
 }
 
+#privacy_statement {
+  background-color: #e0e0e0;
+}
+
+#privacy-statement-container {
+  background-color: #fff;
+  padding: 15px;
+}
+
 @media screen and (max-width: 900px) {
   .bg-image {
     height: 500px;

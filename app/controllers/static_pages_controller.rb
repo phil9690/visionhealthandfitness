@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  layout 'register_interest', only: [:cramlington]
+  layout 'register_interest', only: [:cramlington, :cramlington_join]
 
   def home
     @trial = Trial.new
@@ -81,6 +81,9 @@ class StaticPagesController < ApplicationController
   end
 
   def cramlington
+  end
+
+  def cramlington_join
   end
 
   def cramlington_gym_info
