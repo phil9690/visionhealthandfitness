@@ -40,18 +40,6 @@
 
     .small-12.large-3.columns
       .card
-        = link_to memberships_path do
-          .card__overlay
-          .card__image
-            = image_tag('memberships.jpg')
-            .card__text
-              .card__title
-                %h3.underline Memberships
-              .card__body
-                %p With our membership options we’re sure to have something that suits you
-
-    .small-12.large-3.columns
-      .card
         = link_to '#' do
           .card__overlay
           .card__image
@@ -61,5 +49,3 @@
                 %h3.underline P.T
               .card__body
                 %p Our excellent personal trainers are here to help you get in shape
-
-  = render 'trial_banner'

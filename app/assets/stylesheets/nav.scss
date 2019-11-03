@@ -8,6 +8,10 @@ $blue: #2196f3;
   background: $black;
 }
 
+.top-bar {
+  z-index: 3;
+}
+
 #nav {
   background: $black;
   padding: 0 1rem;
@@ -53,6 +57,10 @@ $blue: #2196f3;
 
 .menu > li:hover {
   background-color: $vhf-red;
+}
+
+.dropdown.menu .is-active > a {
+  color: $white !important;
 }
 
 @media screen and (max-width: 640px) {

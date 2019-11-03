@@ -14,7 +14,7 @@
           = link_to root_path do
             = image_tag('logo-small.png')
     .top-bar-right
-      %ul.medium-horizontal.vertical.dropdown.menu{"data-responsive-menu" => "accordion medium-dropdown"}
+      %ul.medium-horizontal.vertical.dropdown.menu{"data-responsive-menu" => "accordion medium-dropdown", "data-dropdown-menu" => "" }
         %li
           = link_to 'Home', root_path
         %li
@@ -22,11 +22,19 @@
         %li
           = link_to 'Facilities', facilities_path
         %li
-          = link_to 'Memberships', memberships_path
+          %a{:href => "#"} Gyms
+          %ul.menu
+            %li
+              = link_to 'Cramlington', cramlington_join_path
+            %li
+              = link_to 'Gateshead', swalwell_join_path
         %li
-          = link_to 'Timetables', timetables_path
-        %li
-          = link_to 'Book a class', 'https://visionhealthandfitness.membr.com/login'
+          %a{:href => "#"} Book a class
+          %ul.menu
+            %li
+              = link_to 'Cramlington', 'https://visionhealthandfitness2.membr.com/login'
+            %li
+              = link_to 'Gateshead', 'https://visionhealthandfitness.membr.com/login'
         %li
           = link_to 'Contact', new_message_path
         - if logged_in?
@@ -35,9 +43,5 @@
             %ul.menu.vertical
               %li
                 = link_to 'Users', backend_users_path
-              %li
-                = link_to 'Memberships', backend_memberships_path
-              %li
-                = link_to 'Trials', backend_trials_path
               %li
                 = link_to 'Log out', logout_path, method: :delete

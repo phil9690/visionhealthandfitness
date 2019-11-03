@@ -1,12 +1,26 @@
 $vhf-red: #B20000;
 
-.bg-image {
+.bg-image-cramlington {
   background: 
     linear-gradient(
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)
     ),
     image-url('cramlington1-ol.png');
+  background-size: cover;
+  width: 100%;
+  min-height: 700px;
+  position: relative;
+  float: left;
+}
+
+.bg-image-swalwell {
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    image-url('swalwell.png');
   background-size: cover;
   width: 100%;
   min-height: 700px;
