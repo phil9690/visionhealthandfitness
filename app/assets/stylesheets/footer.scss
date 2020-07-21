@@ -17,3 +17,21 @@ $medium-gray: #333;
   list-style-type: none;
   margin: 0;
 }
+
+.footer .accordion-item a {
+  font-size: 15px;
+}
+
+.footer ul span {
+  font-size: 14px;
+}
+
+.footer ul .accordion-title {
+  background-color: #000;
+  border-color: #000;
+  padding-left: 0;
+}
+
+.footer ul :last-child:not(.is-active) > .accordion-title {
+  border-bottom: none;
+}
